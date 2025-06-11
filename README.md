@@ -1,7 +1,7 @@
 # Project Starter
 
 This repository provides:
-1. The necessary environment to run your interpreter solution in
+1. The necessary environment to run your interpreter solution inside of
 2. A local autograder script supplied with 20% of the Gradescope test cases for you to test your program
 
 ## Notes
@@ -29,7 +29,7 @@ intbase.py
 
 To test your solution against the local autograder (again, this is 20% of the total Gradescope test cases), simply run:
 ```
-python test.py <project number>
+python tester.py <project number>
 ```
 
 This will run all the `tests` and `fails` tests in directory `v<project number>` against your interpreter.
