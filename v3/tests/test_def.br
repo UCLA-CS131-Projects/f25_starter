@@ -1,0 +1,18 @@
+func main() : int {
+  var a: int; 
+  print(a);
+ 
+  var b: string;
+  print("|",b,"|");
+
+  var c: bool;
+  print(c);
+}
+
+/*
+*OUT*
+0
+||
+false
+*OUT*
+*/

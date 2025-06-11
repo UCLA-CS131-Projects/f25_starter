@@ -1,0 +1,17 @@
+func main() {
+  try {
+    var a;
+    a = "x";
+    raise a + a;
+    print("a");
+  }
+  catch "xx" {
+    print("x");
+  }
+}
+
+/*
+*OUT*
+x
+*OUT*
+*/

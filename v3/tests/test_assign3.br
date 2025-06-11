@@ -1,0 +1,14 @@
+func main() : int {
+  var a: bool; 
+  a = 5;
+  print(a);
+  a = 0;
+  print(a);
+}
+
+/*
+*OUT*
+true
+false
+*OUT*
+*/

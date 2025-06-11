@@ -1,0 +1,28 @@
+
+func foo() {
+  raise "x";
+  print("foo");
+  return true;
+}
+
+func bar(x) {
+  print("bar1");
+  print(x); 
+  print("bar2");
+}
+
+func main() {
+  try {
+    bar(foo());
+  }
+  catch "x" {
+    print("x");
+  }
+}
+
+/*
+*OUT*
+bar1
+x
+*OUT*
+*/

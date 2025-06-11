@@ -1,0 +1,24 @@
+func main() : int {
+  var a:int;
+  a = 10;
+  if (!a) {
+    print("a");
+  } else {
+    print("b");
+  }
+  if (!0) {
+    print("c");
+  }
+  a = 0;
+  if (!a) {
+    print("d");
+  }
+}
+
+/*
+*OUT*
+b
+c
+d
+*OUT*
+*/

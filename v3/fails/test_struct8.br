@@ -1,0 +1,18 @@
+struct boo {
+  a:int;
+}
+
+struct car {
+ b: boo;
+}
+
+func main() : int {
+  var c: car;
+  c.b.a = 10;
+}
+
+/*
+*OUT*
+ErrorType.FAULT_ERROR
+*OUT*
+*/

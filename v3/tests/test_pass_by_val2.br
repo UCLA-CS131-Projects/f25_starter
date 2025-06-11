@@ -1,0 +1,22 @@
+struct test {
+    s: string;
+}
+
+func foo(s:string): void {
+ s = "bletch";
+}
+
+func main() : void {
+ var t: test;
+ t = new test;
+ t.s = "foobar";
+ foo(t.s);
+ print(t.s);
+}
+
+/*
+*OUT*
+foobar
+*OUT*
+*/
+

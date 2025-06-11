@@ -1,0 +1,13 @@
+func main() {
+  var a;
+  a = (5 + 10 + 15);
+  print(a);  
+}
+
+/*
+*IN*
+*IN*
+*OUT*
+30
+*OUT*
+*/

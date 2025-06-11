@@ -1,0 +1,14 @@
+func main() {
+  var a;
+  a = inputi();
+  print(a);  
+}
+
+/*
+*IN*
+10
+*IN*
+*OUT*
+10
+*OUT*
+*/

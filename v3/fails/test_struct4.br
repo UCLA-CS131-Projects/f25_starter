@@ -1,0 +1,15 @@
+struct s {
+  a:int;
+}
+
+func main() : int {
+  var x : s;
+  x = new s;
+  x.a.b = 10; 
+}
+
+/*
+*OUT*
+ErrorType.TYPE_ERROR
+*OUT*
+*/

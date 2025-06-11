@@ -1,0 +1,34 @@
+func foo(a) {
+ print("foo");
+ return a + bletch();
+}
+
+func bar() {
+ print("bar");
+ return 1;
+}
+
+func bletch() {
+ print("bletch");
+ return 10;
+}
+
+func main() {
+ var a;
+ a = bar() + 2;
+ print("---");
+ a = foo(a);
+ print("---");
+ print(a);
+}
+
+/*
+*OUT*
+---
+---
+foo
+bar
+bletch
+13
+*OUT*
+*/

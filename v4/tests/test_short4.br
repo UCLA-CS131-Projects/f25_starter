@@ -1,0 +1,21 @@
+func t() {
+ print("t");
+ return true;
+}
+
+func f() {
+ print("f");
+ return false;
+}
+
+func main() {
+  print(f() || t() || t());
+}
+
+/*
+*OUT*
+f
+t
+true
+*OUT*
+*/

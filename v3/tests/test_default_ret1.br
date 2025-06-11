@@ -1,0 +1,25 @@
+func main() : void {
+  print(retint());
+  print(retstring());
+  print(retbool());
+}
+
+func retint() : int {
+  var a: bool;
+}
+
+func retstring() : string {
+  var a: bool;
+}
+
+func retbool() : bool {
+  var a: bool;
+}
+
+/*
+*OUT*
+0
+
+false
+*OUT*
+*/

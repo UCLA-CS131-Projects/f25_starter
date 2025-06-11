@@ -1,0 +1,10 @@
+func main() : int {
+  var x: string;
+  x.a = 10; 
+}
+
+/*
+*OUT*
+ErrorType.TYPE_ERROR
+*OUT*
+*/

@@ -1,0 +1,19 @@
+struct foo {
+ b:bool;
+}
+
+func main() : void {
+  var f:foo;
+  f = new foo;
+  f.b = 0;
+  print(f.b);
+  f.b = -5;
+  print(f.b);
+}
+
+/*
+*OUT*
+false
+true
+*OUT*
+*/

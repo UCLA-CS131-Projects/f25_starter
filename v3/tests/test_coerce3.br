@@ -1,0 +1,28 @@
+func main() : int {
+  var a:int;
+  a = 10;
+  if (a || true) {
+    print("1");
+  }
+  if (true || a) {
+    print("2");
+  }
+  if (a && true) {
+    print("3");
+  }
+  if (true && a) {
+    print("4");
+  }
+  if (0 && true) {
+    print("5");
+  }
+}
+
+/*
+*OUT*
+1
+2
+3
+4
+*OUT*
+*/

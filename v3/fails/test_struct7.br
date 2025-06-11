@@ -1,0 +1,14 @@
+struct boo {
+  a:int;
+}
+
+func main() : int {
+  var x: boo;
+  x = new bar;
+}
+
+/*
+*OUT*
+ErrorType.TYPE_ERROR
+*OUT*
+*/

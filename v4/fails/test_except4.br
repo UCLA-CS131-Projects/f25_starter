@@ -1,0 +1,19 @@
+func foo() {
+ print("FOO1");
+ raise "exception";
+ print("FOO2");
+}
+
+func main() {
+ print("MAIN1");
+ foo();
+ print("MAIN2");
+}
+
+/*
+*OUT*
+MAIN1
+FOO1
+ErrorType.FAULT_ERROR
+*OUT*
+*/

@@ -1,0 +1,20 @@
+func foo(x) {
+ print("foo: ",x);
+ return x;
+}
+
+func main() {
+ var a;
+ a = foo("a") + foo("b");
+ print("---");
+ print(a);
+}
+
+/*
+*OUT*
+---
+foo: a
+foo: b
+ab
+*OUT*
+*/

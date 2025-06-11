@@ -1,0 +1,25 @@
+struct s {
+  val:int;
+}
+
+func foo() : s {
+  return;
+}
+
+func bar() : s {
+  var temp: int;
+}
+
+func main() : void {
+  var x : s;
+  x = foo();
+  print(x);
+  x = bar();
+  print(x);
+}
+/*
+*OUT*
+nil
+nil
+*OUT*
+*/

@@ -1,0 +1,11 @@
+func main() : int {
+  var a: int; 
+  a = 1+3;
+  print(a);
+}
+
+/*
+*OUT*
+4
+*OUT*
+*/

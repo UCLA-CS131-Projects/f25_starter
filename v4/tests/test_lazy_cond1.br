@@ -1,0 +1,21 @@
+func foo() {
+ print("foo");
+ return 5;
+}
+
+func main() {
+ var a;
+ a = foo();
+ print("---");
+ if (a > 0) {
+  print("yes");
+ }
+}
+
+/*
+*OUT*
+---
+foo
+yes
+*OUT*
+*/

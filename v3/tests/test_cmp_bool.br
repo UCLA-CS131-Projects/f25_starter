@@ -1,0 +1,15 @@
+func main() : int {
+  print(0 == false);
+  print(0 != false);
+  print(9 == true);
+  print(9 != true);
+}
+
+/*
+*OUT*
+true
+false
+true
+false
+*OUT*
+*/

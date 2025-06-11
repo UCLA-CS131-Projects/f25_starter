@@ -1,0 +1,12 @@
+func main() : void {
+  bar();
+}
+
+func bar() : void {
+  return;
+}
+
+/*
+*OUT*
+*OUT*
+*/

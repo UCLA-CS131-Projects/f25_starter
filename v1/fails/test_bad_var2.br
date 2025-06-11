@@ -1,0 +1,9 @@
+func main() {
+  unknown_var = 5;
+}
+
+/*
+*OUT*
+ErrorType.NAME_ERROR
+*OUT*
+*/

@@ -1,0 +1,25 @@
+func main() : int {
+  print(foo());
+  print(bar());
+  print(boo());
+}
+
+func foo() : int {
+  return;
+}
+
+func bar() : string {
+  return;
+}
+
+func boo() : bool {
+  return;
+}
+
+/*
+*OUT*
+0
+
+false
+*OUT*
+*/

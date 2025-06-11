@@ -1,0 +1,21 @@
+struct foo {
+    bletch: int;
+}
+
+func main() : void {
+    var a: foo;
+    test(a);
+    print(a.bletch);
+}
+
+func test(a: foo): foo {
+    a = new foo;
+    a.bletch = 3;
+    return a;
+}
+
+/*
+*OUT*
+ErrorType.FAULT_ERROR
+*OUT*
+*/

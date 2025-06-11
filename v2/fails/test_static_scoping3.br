@@ -1,0 +1,15 @@
+func main() {
+ var a;
+ a = 5;
+ foo();
+}
+
+func foo() {
+  print(a);
+}
+
+/*
+*OUT*
+ErrorType.NAME_ERROR
+*OUT*
+*/

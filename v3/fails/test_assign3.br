@@ -1,0 +1,11 @@
+func main() : int {
+  var a: bool; 
+  a = "foo";
+  print(a);
+}
+
+/*
+*OUT*
+ErrorType.TYPE_ERROR
+*OUT*
+*/

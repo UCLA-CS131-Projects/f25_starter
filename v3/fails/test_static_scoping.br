@@ -1,0 +1,19 @@
+struct s {
+    i: int;
+}
+
+func main(): void {
+    var a: s;
+    if (true) {
+        var a: s;
+        a = new s;
+        a.i = 3;
+    }
+    print(a.i);
+}
+
+/*
+*OUT*
+ErrorType.FAULT_ERROR
+*OUT*
+*/

@@ -1,0 +1,17 @@
+func main() : int {
+  var a: int; 
+  a = 1;
+  foo(a);
+  foo(0);
+}
+
+func foo(x:bool) : void {
+  print(x);
+}
+
+/*
+*OUT*
+true
+false
+*OUT*
+*/

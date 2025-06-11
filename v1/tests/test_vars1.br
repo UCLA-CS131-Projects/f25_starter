@@ -1,0 +1,15 @@
+func main() {
+  var foo;
+  var bar;
+  foo = 10;
+  bar = foo;
+  var bletch;
+  bletch = foo + bar;
+  print(foo, bar, bletch);  
+}
+
+/*
+*OUT*
+101020
+*OUT*
+*/

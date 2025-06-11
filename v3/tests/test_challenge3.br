@@ -1,0 +1,129 @@
+struct list {
+    val: int;
+    next: list;
+}
+
+func mergesort(l: list, n: int): list {
+    if (n < 2) {
+        return l;
+    }
+
+    var n1 : int;
+    var i : int;
+    var l1_tail : list;
+    var l2 : list;
+
+    n1 = n / 2;
+    l1_tail = l;
+    for (i = n1 - 1; i > 0; i = i - 1) {
+        l1_tail = l1_tail.next;
+    }
+    l2 = l1_tail.next;
+    l1_tail.next = nil;
+
+    var l1_sorted : list;
+    var l2_sorted : list;
+
+    l1_sorted = mergesort(l, n1);
+    l2_sorted = mergesort(l2, n - n1);
+
+    var new_head : list;
+    var new_tail : list;
+    for (i = 0; !(l1_sorted == nil || l2_sorted == nil); i = i + 1) {
+        if (l1_sorted.val <= l2_sorted.val) {
+            if (!i) {
+                new_head = l1_sorted;
+            } else {
+                new_tail.next = l1_sorted;
+            }
+            new_tail = l1_sorted;
+            l1_sorted = l1_sorted.next;
+        } else {
+            if (!i) {
+                new_head = l2_sorted;
+            } else {
+                new_tail.next = l2_sorted;
+            }
+            new_tail = l2_sorted;
+            l2_sorted = l2_sorted.next;
+        }
+        new_tail.next = nil;
+    }
+
+    if (l1_sorted != nil) {
+        new_tail.next = l1_sorted;
+    } else {
+        new_tail.next = l2_sorted;
+    }
+
+    return new_head;
+}
+
+func print_list(l: list): void {
+    var x: list;
+    var n: int;
+    for (x = l; x != nil; x = x.next) {
+        print(x.val);
+        n = n + 1;
+    }
+}
+
+func main() : void {
+    var n : int;
+    var i : int;
+    var lhead : list;
+    var ltail : list;
+
+    n = inputi();
+    for (i = 0; i < n; i = i + 1) {
+        var x : int;
+        var e : list;
+
+        x = inputi();
+        e = new list;
+        e.val = x;
+
+        if (!i) {
+            lhead = e;
+        } else {
+            ltail.next = e;
+        }
+        ltail = e;
+    }
+
+    var lsort : list;
+    lsort = mergesort(lhead, n);
+    print_list(lsort);
+
+    print("ORIG");
+    print_list(lhead);
+}
+
+/*
+*IN*
+8
+5
+2
+7
+4
+1
+3
+8
+6
+*IN*
+*OUT*
+1
+2
+3
+4
+5
+6
+7
+8
+ORIG
+5
+6
+7
+8
+*OUT*
+*/

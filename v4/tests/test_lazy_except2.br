@@ -1,0 +1,21 @@
+
+func foo() {
+  raise "x";
+  print("foo");
+  return true;
+}
+
+func main() {
+  try {
+    return foo(); /* foo call not evaluated since foo() is called lazily */
+    print("y");
+  }
+  catch "x" {
+    print("x");
+  }
+}
+
+/*
+*OUT*
+*OUT*
+*/

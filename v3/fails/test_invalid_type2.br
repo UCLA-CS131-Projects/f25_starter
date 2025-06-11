@@ -1,0 +1,11 @@
+func main() : int {
+  var a: usc; 
+  var b: foo; 
+}
+
+
+/*
+*OUT*
+ErrorType.TYPE_ERROR
+*OUT*
+*/

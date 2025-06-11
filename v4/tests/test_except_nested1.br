@@ -1,0 +1,24 @@
+func main() {
+  try {
+    try {
+      raise "a";
+      print("x");
+    }
+    catch "a" {
+      print("a");
+    }
+    print("b");
+  }
+  catch "c" {
+    print("c");
+  }
+  print("d");
+}
+
+/*
+*OUT*
+a
+b
+d
+*OUT*
+*/

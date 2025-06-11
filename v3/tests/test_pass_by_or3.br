@@ -1,0 +1,28 @@
+struct foo {
+    i: int;
+}
+
+func bar(x: foo) : void {
+    if (x == nil) {
+        print("BRANCH 1");
+        x = new foo;
+        x.i = 33;
+    } else {
+        print("BRANCH 2");
+    }
+}
+
+func main() : void {
+    var x: foo;
+    bar(nil);
+    bar(x);
+    bar(x);
+}
+
+/*
+*OUT*
+BRANCH 1
+BRANCH 1
+BRANCH 1
+*OUT*
+*/

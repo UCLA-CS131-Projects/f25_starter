@@ -1,0 +1,25 @@
+func fact(n) {
+  var i;
+  var acc;
+  acc = 1;
+  for (i=2; i<=n; i=i+1) {
+	  acc = acc * i;
+  }
+  return acc;
+}
+
+func fib(n) {
+  if (n < 3) { return 1; }
+  return fib(n-1) + fib(n-2);
+}
+
+func main() {
+  print(fact(fib(6)));
+}
+
+
+/*
+*OUT*
+40320
+*OUT*
+*/

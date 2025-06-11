@@ -1,0 +1,35 @@
+
+func foo() {
+  var x;
+  var y;
+
+  x = 10;
+  y = x * 3;
+  if (true) {
+    var z;
+    z = 3 + y;
+    var x;
+    x = z + 10;
+    return x;
+  }
+}
+
+func bar() {
+  var x;
+  x = 20;
+  return x + foo();
+}
+
+func main() {
+  var x;
+  x = bar();
+  print("---");
+  print(x);
+}
+
+/*
+*OUT*
+---
+63
+*OUT*
+*/

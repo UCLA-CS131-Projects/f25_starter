@@ -1,0 +1,22 @@
+struct bar {
+    a: bar;
+}
+
+struct foo {
+    x: bar;
+    y: bar;
+}
+
+func main(): void {
+    var h: foo;
+    h = new foo;
+    h.x = new bar;
+    h.y = new bar;
+    print(h.x == h.y);
+}
+
+/*
+*OUT*
+false
+*OUT*
+*/

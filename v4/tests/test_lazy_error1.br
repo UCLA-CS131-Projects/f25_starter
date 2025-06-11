@@ -1,0 +1,13 @@
+func main() {
+ var a;
+ var b;
+ b = x;
+ a = true + 5;
+ print("OK");
+}
+
+/*
+*OUT*
+OK
+*OUT*
+*/

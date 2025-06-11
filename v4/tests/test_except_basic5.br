@@ -1,0 +1,23 @@
+
+func foo() {
+  try {
+    print("foo1");
+    return 5;
+    print("foo2");
+  }
+  catch "x" {
+    print("foo3");
+  }
+  print("foo4");
+}
+
+func main() {
+  print(foo());
+}
+
+/*
+*OUT*
+foo1
+5
+*OUT*
+*/

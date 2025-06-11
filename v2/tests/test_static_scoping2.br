@@ -1,0 +1,19 @@
+func foo() {
+  var a;
+  a = 20;
+  print(a);
+}
+
+func main() {
+  var a;
+  a = 5;
+  foo();
+  print(a);
+}
+
+/*
+*OUT*
+20
+5
+*OUT*
+*/

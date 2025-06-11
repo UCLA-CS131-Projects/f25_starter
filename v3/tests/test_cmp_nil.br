@@ -1,0 +1,14 @@
+struct foo {
+ a:int;
+}
+
+func main() : void {
+  var f: foo;
+  print(f == nil);
+}
+
+/*
+*OUT*
+true
+*OUT*
+*/

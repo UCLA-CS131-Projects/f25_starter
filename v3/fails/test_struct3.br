@@ -1,0 +1,13 @@
+struct s {
+  a:int;
+}
+
+func main() : int {
+  x.a = 10; 
+}
+
+/*
+*OUT*
+ErrorType.NAME_ERROR
+*OUT*
+*/

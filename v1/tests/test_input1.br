@@ -1,0 +1,15 @@
+func main() {
+  var a;
+  a = inputi("Enter a value: ");
+  print(a);  
+}
+
+/*
+*IN*
+10
+*IN*
+*OUT*
+Enter a value: 
+10
+*OUT*
+*/

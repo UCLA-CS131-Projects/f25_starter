@@ -1,0 +1,25 @@
+
+func foo() {
+  raise "x";
+  print("foo");
+  return true;
+}
+
+func main() {
+  try {
+    var a;
+    a = foo();  /* a's value is evaluated lazily so foo is never called */
+    print("y");
+    print(a); /* foo is finally called here */
+  }
+  catch "x" {
+    print("x");
+  }
+}
+
+/*
+*OUT*
+y
+x
+*OUT*
+*/

@@ -1,0 +1,22 @@
+struct foo {
+ i:int;
+}
+
+func main() : int {
+  var f: foo;
+  if (f == nil) {
+    print("yes");
+  }
+  f = new foo;
+  if (f != nil) {
+    print("yes2");
+  }
+
+}
+
+/*
+*OUT*
+yes
+yes2
+*OUT*
+*/

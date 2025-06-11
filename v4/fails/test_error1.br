@@ -1,0 +1,11 @@
+func main() {
+ a = 5;
+ print("---");
+ print(a);
+}
+
+/*
+*OUT*
+ErrorType.NAME_ERROR
+*OUT*
+*/

@@ -1,0 +1,11 @@
+func main() {
+  var a;
+  a = "foo";
+  print(a);  
+}
+
+/*
+*OUT*
+foo
+*OUT*
+*/

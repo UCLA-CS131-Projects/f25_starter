@@ -1,0 +1,9 @@
+func main() : int {
+  var x: bletch;
+}
+
+/*
+*OUT*
+ErrorType.TYPE_ERROR
+*OUT*
+*/

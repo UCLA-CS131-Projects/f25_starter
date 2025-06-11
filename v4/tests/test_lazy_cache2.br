@@ -1,0 +1,30 @@
+func bar(x) {
+ print("bar:", x);
+ return x;
+}
+
+func main() {
+ var a;
+ var b;
+ a = bar(1);
+ b = a + bar(2);
+ print("---");
+ print(b);
+ print("---");
+ print(a);
+ print("---");
+ print(a);
+}
+
+/*
+*OUT*
+---
+bar:1
+bar:2
+3
+---
+1
+---
+1
+*OUT*
+*/

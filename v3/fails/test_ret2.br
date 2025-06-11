@@ -1,0 +1,13 @@
+func main(): void {
+    print(test());
+}
+
+func test(): bool {
+    return nil;
+}
+
+/*
+*OUT*
+ErrorType.TYPE_ERROR
+*OUT*
+*/

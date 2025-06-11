@@ -1,0 +1,18 @@
+func main() {
+  if (true) { print("true"); print("foo"); }
+  if (false) { print("false"); }
+
+  if (true) { print("true"); print("blue"); } else { print("false"); }
+  if (false) { print("false"); } else { print("true"); print("foo"); }
+}
+
+/*
+*OUT*
+true
+foo
+true
+blue
+true
+foo
+*OUT*
+*/

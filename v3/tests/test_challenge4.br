@@ -1,0 +1,120 @@
+struct array2d {
+    val: int;
+    up: array2d;
+    down: array2d;
+    left: array2d;
+    right: array2d;
+}
+
+func alloc_row(cols: int, initval: int) : array2d {
+    if (cols == 0) {
+        return nil;
+    }
+
+    var base: array2d;
+    var last: array2d;
+    var i: int;
+
+    base = new array2d;
+    base.val = initval;
+    last = base;
+
+    for (i = 1; i < cols; i = i + 1) {
+        last.right = new array2d;
+        last.right.left = last;
+        last = last.right;
+        last.val = initval;
+    }
+
+    return base;
+}
+
+func alloc_array2d(rows: int, cols: int, initval: int) : array2d {
+    if (rows == 0 || cols == 0) {
+        return nil;
+    }
+
+    var base: array2d;
+    base = alloc_row(cols, initval);
+
+    var i: int;
+    var cur_row: array2d;
+    cur_row = base;
+
+    for (i = 1; i < rows; i = i + 1) {
+        var new_row: array2d;
+        new_row = alloc_row(cols, initval);
+
+        var cur_elem: array2d;
+        var new_elem: array2d;
+        var j: int;
+
+        cur_elem = cur_row;
+        new_elem = new_row;
+
+        for (j = 0; j < cols; j = j + 1) {
+            cur_elem.up = new_elem;
+            new_elem.down = cur_elem;
+            cur_elem = cur_elem.right;
+            new_elem = new_elem.right;
+        }
+
+        cur_row = new_row;
+    }
+
+    return base;
+}
+
+func array2d_index(base: array2d, r: int, c: int) : array2d {
+    var i: int;
+
+    for (i = 0; i < r; i = i + 1) {
+        base = base.up;
+    }
+
+    for (i = 0; i < c; i = i + 1) {
+        base = base.right;
+    }
+
+    return base;
+}
+
+func nchoosek(target: array2d, n: int, k: int) : int {
+    if (target == nil) {
+        return 0;
+    }
+    if (target.val >= 0) {
+        return target.val;
+    }
+    if (n < k) {
+        target.val = 0;
+    } else {
+        target.val = nchoosek(target.down, n - 1, k) + nchoosek(target.down.left, n - 1, k - 1);
+    }
+    return target.val;
+}
+
+func main() : void {
+    var n: int;
+    var k: int;
+    var base: array2d;
+    var target: array2d;
+
+    n = inputi();
+    k = inputi();
+    base = alloc_array2d(n + 1, k + 1, -1);
+    base.val = 1;
+
+    target = array2d_index(base, n, k);
+    print(n, " choose ", k, " = ", nchoosek(target, n, k));
+}
+
+/*
+*IN*
+24
+11
+*IN*
+*OUT*
+24 choose 11 = 2496144
+*OUT*
+*/

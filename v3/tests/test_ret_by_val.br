@@ -1,0 +1,21 @@
+func foo(x:int) : int {
+  return x;
+}
+
+func main() : int {
+  var a: int; 
+  a = 5;
+  var b: int;
+  b = foo(a);
+  a = 10;
+  print(b); 
+  b = 20;
+  print(a);
+}
+
+/*
+*OUT*
+5
+10
+*OUT*
+*/

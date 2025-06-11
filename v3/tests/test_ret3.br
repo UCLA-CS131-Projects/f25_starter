@@ -1,0 +1,15 @@
+func main() : void {
+  print(foo(0));
+  print(foo(1));
+}
+
+func foo(x:int) : bool {
+  return x;
+}
+
+/*
+*OUT*
+false
+true
+*OUT*
+*/

@@ -1,0 +1,15 @@
+struct foo {
+ b : bool;
+}
+
+func main() : int {
+  var a: foo;
+  a = nil;
+  print(a);
+}
+
+/*
+*OUT*
+nil
+*OUT*
+*/

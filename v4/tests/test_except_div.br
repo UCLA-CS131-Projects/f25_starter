@@ -1,0 +1,22 @@
+
+func main() {
+  try {
+    var a;
+    print("a");
+    a = 10 / 0;
+    print(a);
+    print("b");
+  }
+  catch "div0" {
+    print("0");
+  }
+  print("1");
+}
+
+/*
+*OUT*
+a
+0
+1
+*OUT*
+*/

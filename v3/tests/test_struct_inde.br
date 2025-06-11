@@ -1,0 +1,22 @@
+struct foo {
+ i:int;
+}
+
+func main() : int {
+  var f: foo;
+  f = new foo;
+  var a: int;
+  a = 10;
+  f.i = a;
+  a = 20;
+  print(f.i);
+  f.i = 30;
+  print(a);
+}
+
+/*
+*OUT*
+10
+20
+*OUT*
+*/

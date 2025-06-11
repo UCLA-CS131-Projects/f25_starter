@@ -1,0 +1,13 @@
+func main() : void {
+    print(foo());
+}
+
+func foo() : void {
+    return;
+}
+
+/*
+*OUT*
+ErrorType.TYPE_ERROR
+*OUT*
+*/

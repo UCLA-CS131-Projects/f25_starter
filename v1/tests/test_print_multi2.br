@@ -1,0 +1,13 @@
+func main() {
+  var y;
+  y = 3;
+  print(y, " is 1 plus ", y - 1);
+}
+
+/*
+*IN*
+*IN*
+*OUT*
+3 is 1 plus 2
+*OUT*
+*/

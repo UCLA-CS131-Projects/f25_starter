@@ -1,0 +1,90 @@
+struct bst {
+    v: int;
+    l: bst;
+    r: bst;
+}
+
+func insert(r: bst, v: int) : bst {
+    if (r != nil) {
+        if (v < r.v) {
+            r.l = insert(r.l, v);
+        } else {
+            r.r = insert(r.r, v);
+        }
+        return r;
+    } else {
+        r = new bst;
+        r.v = v;
+        return r;
+    }
+}
+
+func pre(r: bst) : void {
+    if (r != nil) {
+        print(r.v);
+        pre(r.l);
+        pre(r.r);
+    }
+}
+
+func mid(r: bst) : void {
+    if (r == nil) {
+        return;
+    }
+    var rem: int;
+    rem = r.v - ((r.v / 2) * 2);
+    mid(r.l);
+    print(!!rem);
+    mid(r.r);
+}
+
+func main() : void {
+    var n: int;
+    var i: int;
+    var r: bst;
+
+    n = inputi();
+    for (i = n; i; i = i - 1) {
+        var n: int;
+        n = inputi();
+        r = insert(r, n);
+    }
+    print("PRE");
+    pre(r);
+    print("MID");
+    mid(r);
+}
+
+/*
+*IN*
+8
+5
+2
+7
+4
+1
+3
+8
+6
+*IN*
+*OUT*
+PRE
+5
+2
+1
+4
+3
+7
+6
+8
+MID
+true
+false
+true
+false
+true
+false
+true
+false
+*OUT*
+*/

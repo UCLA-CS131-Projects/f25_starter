@@ -1,0 +1,29 @@
+func sum(x, y) {
+ print("arg1:", x);
+ print("arg2:", y);
+ return x+y;
+}
+
+func inc(x) {
+	print("inc:", x);
+	return x+1;
+}
+
+func main() {
+ var a;
+ var b;
+ a = 3;
+ b = 4;
+ sum(inc(a), inc(b));
+}
+
+/*
+*IN*
+*IN*
+*OUT*
+inc:3
+arg1:4
+inc:4
+arg2:5
+*OUT*
+*/

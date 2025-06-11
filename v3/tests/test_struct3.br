@@ -1,0 +1,32 @@
+struct node {
+  val:int;
+  next:node;
+}
+
+func add_front(head: node, val:int) : node {
+  var new_node: node;
+  new_node = new node;
+  new_node.val = val;
+  new_node.next = head;
+  return new_node;
+}
+
+func main() : void {
+  var head : node;
+  head = nil;
+  head = add_front(head, 10);
+  head = add_front(head, 20);
+  head = add_front(head, 30);
+
+  var temp: node;
+  for (temp = head; temp != nil; temp = temp.next) {
+    print(temp.val);
+  }
+}
+/*
+*OUT*
+30
+20
+10
+*OUT*
+*/

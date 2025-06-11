@@ -1,0 +1,13 @@
+func foo(a:bar): void {
+  print("hi");
+}
+
+func main() : void {
+  foo(nil);
+}
+
+/*
+*OUT*
+ErrorType.TYPE_ERROR
+*OUT*
+*/

@@ -1,0 +1,29 @@
+func foo() {
+  var ans;
+  ans = 0;
+  var i;
+  for (i=0;i < 3; i = i + 1) {
+  var j;
+    for (j=0;j < 3;j=j+1) {
+    var k;
+		for (k=0; k < 3; k = k + 1) {
+			if (i * j * k == 1) {
+				return ans;
+			} else {
+				ans = ans + 1;
+			}
+		}
+	}
+  }
+}
+
+func main() {
+  print(foo());
+}
+
+/*
+*OUT*
+13
+*OUT*
+*/
+
