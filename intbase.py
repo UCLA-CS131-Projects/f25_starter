@@ -12,11 +12,10 @@ class ErrorType(Enum):
 class InterpreterBase:
     # AST node types
     PROGRAM_NODE = "program"
-    STRUCT_NODE = "struct"
     FUNC_NODE = "func"
     NIL_NODE = "nil"
     IF_NODE = "if"
-    FOR_NODE = "for"
+    WHILE_NODE = "while"
     ARG_NODE = "arg"
     NEG_NODE = "neg"
     RETURN_NODE = "return"
@@ -24,20 +23,22 @@ class InterpreterBase:
     BOOL_NODE = "bool"
     STRING_NODE = "string"
     FCALL_NODE = "fcall"
-    VAR_NODE = "var"
+    QUALIFIED_NAME_NODE = "qname"   # var_name, var1.var2.var3, funcname
     NOT_NODE = "!"
     VAR_DEF_NODE = "vardef"
-    FIELD_DEF_NODE = "fielddef"
-    NEW_NODE = "new"
-    TRY_NODE = "try"
-    CATCH_NODE = "catch"
-    RAISE_NODE = "raise"
+    BVAR_DEF_NODE = "bvardef"
+    CLONE_NODE = "clone"
+    CLOSURE_NODE = "closure"
+    CONVERT_NODE = "convert"
+    EMPTY_OBJ_NODE = "@"
+    INTERFACE_NODE = "interface"
+    FIELD_FUNC_NODE = "field_func"
+    FIELD_VAR_NODE = "field_var"
 
     # other constants
     TRUE_DEF = "true"
     FALSE_DEF = "false"
     NIL_DEF = "nil"
-    VOID_DEF = "void"
     
     # methods
     def __init__(self, console_output=True, inp=None):

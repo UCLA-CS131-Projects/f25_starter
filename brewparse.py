@@ -24,66 +24,70 @@ def collapse_items(p, group_index, singleton_index):
 
 
 def p_program(p):
-    """program : structs funcs
+    """program : interfaces funcs
     | funcs"""
-    if len(p) == 2:
-        p[0] = Element(InterpreterBase.PROGRAM_NODE, structs=[], functions=p[1])
+    if len(p) == 3:
+        p[0] = Element(InterpreterBase.PROGRAM_NODE, interfaces=p[1], functions=p[2])
     else:
-        p[0] = Element(InterpreterBase.PROGRAM_NODE, structs=p[1], functions=p[2])
+        p[0] = Element(InterpreterBase.PROGRAM_NODE, functions=p[1])
 
-def p_structs(p):
-    """structs : structs struct
-    | struct"""
-    collapse_items(p, 1, 2)  # 2 -> struct 
+def p_interfaces(p):
+    """interfaces : interfaces interface
+    | interface"""
+    collapse_items(p,1,2) #2 -> interface
 
-def p_struct(p):
-   "struct : STRUCT NAME LBRACE fields RBRACE"
-   p[0] = Element(InterpreterBase.STRUCT_NODE, name=p[2], fields=p[4])
+def p_interface(p):
+    "interface : INTERFACE NAME LBRACE fields RBRACE"
+    p[0] = Element(InterpreterBase.INTERFACE_NODE, name=p[2], fields=p[4])
 
 def p_fields(p):
-   """fields : fields field
-   | field"""
-   collapse_items(p, 1, 2)  # 2 -> field
+    """fields : fields field
+    | field"""
+    collapse_items(p, 1, 2)  # 2 -> field
 
 def p_field(p):
-  "field : NAME COLON NAME SEMI"  # field_name: type
-  p[0] = Element(InterpreterBase.FIELD_DEF_NODE, name=p[1], var_type=p[3])
+    """field : field_function
+    | field_variable"""
+    p[0] = p[1]
+
+def p_field_function(p):
+    """field_function : NAME LPAREN formal_args RPAREN SEMI
+    | NAME LPAREN RPAREN SEMI"""
+    if len(p) == 6:  # with parameters
+        p[0] = Element(InterpreterBase.FIELD_FUNC_NODE, name=p[1], params=p[3])
+    else:  # no parameters
+        p[0] = Element(InterpreterBase.FIELD_FUNC_NODE, name=p[1], params=[])
+
+def p_field_variable(p):
+    "field_variable : NAME SEMI"
+    p[0] = Element(InterpreterBase.FIELD_VAR_NODE, name=p[1])
+
 
 def p_funcs(p):
     """funcs : funcs func
     | func"""
     collapse_items(p, 1, 2)  # 2 -> func
 
-# Note: the second NAME is the return type, not a function name
 def p_func(p):
-    """func : FUNC NAME LPAREN formal_args RPAREN COLON NAME LBRACE statements RBRACE
-    | FUNC NAME LPAREN RPAREN COLON NAME LBRACE statements RBRACE"""
-    if len(p) == 11:  # handle with 1+ formal args
-        p[0] = Element(InterpreterBase.FUNC_NODE, name=p[2], args=p[4], return_type = p[7], statements=p[9])
-    else:  # handle no formal args
-        p[0] = Element(InterpreterBase.FUNC_NODE, name=p[2], args=[], return_type = p[6], statements=p[8])
-
-def p_func2(p):
-    """func : FUNC NAME LPAREN formal_args RPAREN LBRACE statements RBRACE
-    | FUNC NAME LPAREN RPAREN LBRACE statements RBRACE"""
+    """func : DEF NAME LPAREN formal_args RPAREN LBRACE statements RBRACE
+    | DEF NAME LPAREN RPAREN LBRACE statements RBRACE"""
     if len(p) == 9:  # handle with 1+ formal args
-        p[0] = Element(InterpreterBase.FUNC_NODE, name=p[2], args=p[4], return_type = None, statements=p[7])
+        p[0] = Element(InterpreterBase.FUNC_NODE, name=p[2], args=p[4], statements=p[7])
     else:  # handle no formal args
-        p[0] = Element(InterpreterBase.FUNC_NODE, name=p[2], args=[], return_type = None, statements=p[6])
+        p[0] = Element(InterpreterBase.FUNC_NODE, name=p[2], args=[], statements=p[6])
 
 def p_formal_args(p):
     """formal_args : formal_args COMMA formal_arg
     | formal_arg"""
     collapse_items(p, 1, 3)  # 3 -> formal_arg
 
-# Note: the second NAME is the return type, not a function name
 def p_formal_arg(p):
-    """formal_arg : NAME COLON NAME
-    | NAME"""
-    if len(p) == 2:
-      p[0] = Element(InterpreterBase.ARG_NODE, name=p[1], var_type = None)
-    else:
-      p[0] = Element(InterpreterBase.ARG_NODE, name=p[1], var_type = p[3])
+    """formal_arg : NAME
+    | AMP NAME"""
+    if len(p) == 2:  # NAME only
+        p[0] = Element(InterpreterBase.ARG_NODE, name=p[1], ref=False)
+    else:  # AMP NAME
+        p[0] = Element(InterpreterBase.ARG_NODE, name=p[2], ref=True)
 
 def p_statements(p):
     """statements : statements statement
@@ -96,28 +100,28 @@ def p_statement___assign(p):
     p[0] = p[1]
 
 def p_assign(p):
-    "assign : variable_w_dot ASSIGN expression"
-    p[0] = Element("=", name=p[1], expression=p[3])
+    "assign : qualified_name ASSIGN expression"
+    p[0] = Element("=", var=p[1], expression=p[3])
 
-def p_statement___var(p):
-    """statement : VAR variable COLON NAME SEMI
-    | VAR variable SEMI"""
-    if len(p) == 6:
-      p[0] = Element(InterpreterBase.VAR_DEF_NODE, name=p[2], var_type=p[4])
-    else:
-      p[0] = Element(InterpreterBase.VAR_DEF_NODE, name=p[2], var_type=None)
+def p_statement___fvar(p):
+    "statement : VAR qualified_name_no_dot SEMI" 
+    p[0] = Element(InterpreterBase.VAR_DEF_NODE, name=p[2])
 
-def p_variable(p):
-    "variable : NAME"
-    p[0] = p[1]
+def p_statement___bvar(p):
+    "statement : BVAR qualified_name_no_dot SEMI"    
+    p[0] = Element(InterpreterBase.BVAR_DEF_NODE, name=p[2])
 
-def p_variable_w_dot(p):
-    """variable_w_dot : variable_w_dot DOT NAME
+def p_qualified_name(p):
+    """qualified_name : qualified_name DOT NAME
     | NAME"""
     if len(p) == 4:
         p[0] = p[1] + "." + p[3]
     else:
         p[0] = p[1]
+
+def p_qualified_name_no_dot(p):
+    """qualified_name_no_dot : NAME"""
+    p[0] = p[1] 
 
 def p_statement_if(p):
     """statement : IF LPAREN expression RPAREN LBRACE statements RBRACE
@@ -138,26 +142,10 @@ def p_statement_if(p):
             else_statements=p[10],
         )
 
-def p_statement_try(p):
-    """statement : TRY LBRACE statements RBRACE catchers"""
-    p[0] = Element(InterpreterBase.TRY_NODE, statements=p[3], catchers=p[5])
+def p_statement_while(p):
+    "statement : WHILE LPAREN expression RPAREN LBRACE statements RBRACE"
+    p[0] = Element(InterpreterBase.WHILE_NODE, condition=p[3], statements=p[6])
 
-def p_catches(p):
-    """catchers : catchers catch
-    | catch"""
-    collapse_items(p, 1, 2)
-
-def p_catch(p):
-    "catch : CATCH STRING LBRACE statements RBRACE"
-    p[0] = Element(InterpreterBase.CATCH_NODE, exception_type=p[2], statements=p[4])
-
-def p_statement_for(p):
-    "statement : FOR LPAREN assign SEMI expression SEMI assign RPAREN LBRACE statements RBRACE"
-    p[0] = Element(InterpreterBase.FOR_NODE, init=p[3], condition=p[5], update=p[7], statements=p[10])
-
-def p_statement_raise(p):
-    "statement : RAISE expression SEMI"
-    p[0] = Element(InterpreterBase.RAISE_NODE, exception_type=p[2])
 
 def p_statement_expr(p):
     "statement : expression SEMI"
@@ -183,10 +171,18 @@ def p_expression_uminus(p):
     "expression : MINUS expression %prec UMINUS"
     p[0] = Element(InterpreterBase.NEG_NODE, op1=p[2])
 
-def p_expression_new(p):
-    "expression : NEW NAME"
-    p[0] = Element(InterpreterBase.NEW_NODE, var_type=p[2])
 
+def p_expression_int(p):
+    "expression : INT LPAREN expression RPAREN"
+    p[0] = Element(InterpreterBase.CONVERT_NODE, to_type = "int", expr=p[3])
+
+def p_expression_string(p):
+    "expression : STR LPAREN expression RPAREN"
+    p[0] = Element(InterpreterBase.CONVERT_NODE, to_type = "str", expr=p[3])
+
+def p_expression_bool(p):
+    "expression : BOOL LPAREN expression RPAREN"
+    p[0] = Element(InterpreterBase.CONVERT_NODE, to_type = "bool", expr=p[3])
 
 def p_arith_expression_binop(p):
     """expression : expression EQ expression
@@ -218,41 +214,57 @@ def p_expression_number(p):
     p[0] = Element(InterpreterBase.INT_NODE, val=p[1])
 
 
-def p_expression_bool(p):
+def p_expression_bool_literal(p):
     """expression : TRUE
     | FALSE"""
     bool_val = p[1] == InterpreterBase.TRUE_DEF
     p[0] = Element(InterpreterBase.BOOL_NODE, val=bool_val)
 
 
-def p_expression_nil(p):
-    "expression : NIL"
-    p[0] = Element(InterpreterBase.NIL_NODE)
-
-
-def p_expression_string(p):
+def p_expression_string_literal(p):
     "expression : STRING"
     p[0] = Element(InterpreterBase.STRING_NODE, val=p[1])
 
 
-def p_expression_variable(p):
-    "expression : variable_w_dot"
-    p[0] = Element(InterpreterBase.VAR_NODE, name=p[1])
+def p_expression_closure(p):
+    "expression : CLOSURE NAME"
+    p[0] = Element(InterpreterBase.CLOSURE_NODE, args=p[2])
 
+def p_expression_empty_obj(p):
+    "expression : AT"
+    p[0] = Element(InterpreterBase.EMPTY_OBJ_NODE)
+
+def p_expression_nil(p):
+    "expression : NIL"
+    p[0] = Element(InterpreterBase.NIL_NODE)
 
 def p_func_call(p):
-    """expression : NAME LPAREN args RPAREN
-    | NAME LPAREN RPAREN"""
+    """expression : qualified_name LPAREN args RPAREN
+    | qualified_name LPAREN RPAREN"""
     if len(p) == 5:
         p[0] = Element(InterpreterBase.FCALL_NODE, name=p[1], args=p[3])
     else:
         p[0] = Element(InterpreterBase.FCALL_NODE, name=p[1], args=[])
 
 
+def p_expression_variable(p):
+    "expression : qualified_name"
+    p[0] = Element(InterpreterBase.QUALIFIED_NAME_NODE, name=p[1])
+
+
 def p_expression_args(p):
     """args : args COMMA expression
     | expression"""
     collapse_items(p, 1, 3)
+
+# lanbmdab, lambdai, lambdav, lamnbdaf, etc.
+def p_expression_lambda(p):
+    """expression : LAMBDA LPAREN formal_args RPAREN LBRACE statements RBRACE
+    | LAMBDA LPAREN RPAREN LBRACE statements RBRACE"""
+    if len(p) == 8:
+         p[0] = Element(InterpreterBase.FUNC_NODE, name=p[1], args=p[3], statements=p[6])
+    else:
+        p[0] = Element(InterpreterBase.FUNC_NODE, name=p[1], args=[], statements=p[5])
 
 
 def p_error(p):
@@ -263,11 +275,17 @@ def p_error(p):
 
 
 # exported function
-def parse_program(program):
+def parse_program(program, plot = False):
     reset_lineno()
     ast = yacc.parse(program)
     if ast is None:
         raise SyntaxError("Syntax error")
+    
+    # Plot the AST if requested
+    if plot:
+        from plot import plot_ast
+        plot_ast(ast)
+    
     return ast
 
 

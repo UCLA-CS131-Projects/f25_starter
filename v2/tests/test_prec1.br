@@ -1,9 +1,0 @@
-func main() {
-  print(true || false && false);
-}
-
-/*
-*OUT*
-true
-*OUT*
-*/
