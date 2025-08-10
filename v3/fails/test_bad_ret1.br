@@ -1,8 +1,0 @@
-func main(): bar {
-  print("hi");
-}
-/*
-*OUT*
-ErrorType.TYPE_ERROR
-*OUT*
-*/

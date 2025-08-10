@@ -2,19 +2,20 @@ from ply import lex
 
 reserved = (
     "VAR",
-    "FUNC",
+    "BVAR",
     "IF",
     "ELSE",
-    "FOR",
+    "WHILE",
     "RETURN",
     "TRUE",
     "FALSE",
+    "CLOSURE",
+    "INTERFACE",
     "NIL",
-    "STRUCT",
-    "NEW",
-    "TRY",
-    "CATCH",
-    "RAISE",
+    "DEF",
+    "INT",
+    "BOOL",
+    "STR",
 )
 
 reserved_map = {}
@@ -27,7 +28,6 @@ tokens = reserved + (
     "LBRACE",
     "RBRACE",
     "COMMA",
-    "COLON",
     "SEMI",
     "EQ",
     "NOT_EQ",
@@ -47,6 +47,9 @@ tokens = reserved + (
     "OR",
     "NOT",
     "DOT",
+    "AMP",
+    "AT",
+    "LAMBDA",
 )
 
 t_ignore = " \t"
@@ -69,6 +72,7 @@ literals = [
     ".",
     "!",
     "@",
+    "&",
 ]
 
 # Tokens
@@ -78,7 +82,6 @@ t_RPAREN = r"\)"
 t_LBRACE = r"\{"
 t_RBRACE = r"\}"
 t_COMMA = r","
-t_COLON = r":"
 t_SEMI = r";"
 t_EQ = r"=="
 t_GREATER_EQ = r">="
@@ -94,7 +97,10 @@ t_DIVIDE = r"/"
 t_AND = r"&&"
 t_OR = r"\|\|"
 t_NOT = r"!"
-t_DOT = r"."
+t_DOT = r"\."
+t_AMP = r"&"
+t_AT = r"@"
+
 
 
 def t_NUMBER(t):
@@ -102,6 +108,10 @@ def t_NUMBER(t):
     t.value = int(t.value)
     return t
 
+def t_LAMBDA(t):
+    r"lambda[bifosvA-Z]\b"
+    t.type = "LAMBDA"
+    return t
 
 def t_NAME(t):
     r"[A-Za-z_][\w_]*"

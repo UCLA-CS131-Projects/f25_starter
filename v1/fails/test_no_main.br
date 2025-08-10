@@ -1,9 +1,0 @@
-func mani() {
-  print(5);
-}
-
-/*
-*OUT*
-ErrorType.NAME_ERROR
-*OUT*
-*/
