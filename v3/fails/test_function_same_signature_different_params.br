@@ -1,0 +1,22 @@
+def foov(i, b) {
+  print("First function with int and bool params");
+  print(i);
+  print(b);
+}
+
+def foov(ai, bb) {
+  print("Second function with int and bool params");
+  print(ai);
+  print(bb);
+}
+
+def main() {
+  /* This should fail - two functions with same type signature but different parameter names */
+  foov(42, true);
+}
+
+/*
+*OUT*
+ErrorType.NAME_ERROR
+*OUT*
+*/ 

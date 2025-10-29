@@ -1,0 +1,49 @@
+def foov(&vali, &vals, &valb, &valo) {
+  vali = 42;
+  vals = "modified";
+  valb = true;
+  valo = @;
+  valo.newi = 100;
+}
+
+def main() {
+  var testi;
+  var tests;
+  var testb;
+  var testo;
+  
+  testi = 10;
+  tests = "original";
+  testb = false;
+  testo = @;
+  testo.oldi = 50;
+  
+  print("Before foov:");
+  print(testi);
+  print(tests);
+  print(testb);
+  print(testo.oldi);
+  
+  foov(testi, tests, testb, testo);
+  
+  print("After foov:");
+  print(testi);
+  print(tests);
+  print(testb);
+  print(testo.newi);
+}
+
+/*
+*OUT*
+Before foov:
+10
+original
+false
+50
+After foov:
+42
+modified
+true
+100
+*OUT*
+*/

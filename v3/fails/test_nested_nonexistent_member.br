@@ -1,0 +1,11 @@
+def main() {
+  var o;
+  o = @;
+  o.bo.i = 10;
+}
+
+/*
+*OUT*
+ErrorType.NAME_ERROR
+*OUT*
+*/ 

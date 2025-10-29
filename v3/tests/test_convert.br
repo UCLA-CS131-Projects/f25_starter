@@ -1,0 +1,42 @@
+def main() {
+    var ai;
+    var bs;
+    var cb;
+    
+    ai = 42;
+    bs = "hello";
+    cb = true;
+    
+    /* Testing int conversions */
+    print("Testing int conversions:");
+    print(int(ai));      /* should print 42 */
+    print(int(cb));      /* should print 1 */
+    
+    /* Testing string conversions */
+    print("Testing string conversions:");
+    print(str(ai));   /* should print "42" */
+    print(str(bs));   /* should print "hello" */
+    print(str(cb));   /* should print "true" */
+    
+    /* Testing bool conversions */
+    print("Testing bool conversions:");
+    print(bool(ai));     /* should print true */
+    print(bool(bs));     /* should print true */
+    print(bool(cb));     /* should print true */
+}
+
+/*
+*OUT*
+Testing int conversions:
+42
+1
+Testing string conversions:
+42
+hello
+true
+Testing bool conversions:
+true
+true
+true
+*OUT*
+*/ 

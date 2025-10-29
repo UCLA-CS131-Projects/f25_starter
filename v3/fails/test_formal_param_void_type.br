@@ -1,0 +1,14 @@
+def main() {
+  print("Starting test");
+  foov(1);
+}
+
+def foov(param1v) {
+  print("This function has a formal parameter with void type");
+}
+
+/*
+*OUT*
+ErrorType.TYPE_ERROR
+*OUT*
+*/ 

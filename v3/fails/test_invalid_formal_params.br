@@ -1,0 +1,14 @@
+def main() {
+  print("Starting test");
+  foov(1,true,3);
+}
+
+def foov(param1i, param2b, param3) {
+  print("This function has parameters without valid trailing type characters");
+}
+
+/*
+*OUT*
+ErrorType.TYPE_ERROR
+*OUT*
+*/ 

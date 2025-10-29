@@ -1,0 +1,15 @@
+def main() {
+  if (true) {
+    bvar i;
+    i = 10;
+    print(i);
+  }
+  print(i);
+}
+
+/*
+*OUT*
+10
+ErrorType.NAME_ERROR
+*OUT*
+*/ 

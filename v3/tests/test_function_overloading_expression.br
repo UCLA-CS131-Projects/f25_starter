@@ -1,0 +1,58 @@
+def getValuei() {
+  return 100;
+}
+
+def getValuei(ai) {
+  return ai + 50;
+}
+
+def getValuei(ab) {
+  if (ab) {
+    return 200;
+  } else {
+    return 300;
+  }
+}
+
+def getValuei(ao, bs) {
+  return 400;
+}
+
+def getValuei(as, bi) {
+  return bi + 10;
+}
+
+def main() {
+  var resulti;
+  
+  resulti = getValuei();
+  print(resulti);
+  
+  resulti = getValuei(25);
+  print(resulti);
+  
+  resulti = getValuei(true);
+  print(resulti);
+  
+  resulti = getValuei(false);
+  print(resulti);
+  
+  var o;
+  o = @;
+  resulti = getValuei(o, "test");
+  print(resulti);
+  
+  resulti = getValuei("hello", 90);
+  print(resulti);
+}
+
+/*
+*OUT*
+100
+75
+200
+300
+400
+100
+*OUT*
+*/ 

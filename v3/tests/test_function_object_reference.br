@@ -1,0 +1,54 @@
+def foo(objo) {
+  objo.messages = "Modified by foo!";
+  objo.newFields = "Added by foo!";
+  return objo;
+}
+
+def main() {
+  var myObjecto;
+  myObjecto = @;
+  myObjecto.messages = "Original message";
+  
+  var resulto;
+  resulto = foo(myObjecto);
+  
+  print("After foo():");
+  print(resulto.messages);
+  print(resulto.newFields);
+  
+  /* Modify original object */
+  myObjecto.messages = "Changed in main!";
+  myObjecto.anotherFields = "New field in main!";
+  
+  print("After modifying myObjecto:");
+  print(resulto.messages);
+  print(resulto.newFields);
+  print(resulto.anotherFields);
+  
+  /* Modify returned object */
+  resulto.messages = "Changed via resulto!";
+  resulto.yetAnotherFields = "New field via resulto!";
+  
+  print("After modifying resulto:");
+  print(myObjecto.messages);
+  print(myObjecto.newFields);
+  print(myObjecto.anotherFields);
+  print(myObjecto.yetAnotherFields);
+}
+
+/*
+*OUT*
+After foo():
+Modified by foo!
+Added by foo!
+After modifying myObjecto:
+Changed in main!
+Added by foo!
+New field in main!
+After modifying resulto:
+Changed via resulto!
+Added by foo!
+New field in main!
+New field via resulto!
+*OUT*
+*/ 

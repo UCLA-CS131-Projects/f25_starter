@@ -1,0 +1,17 @@
+def main() {
+  var i;      /* should get default value 0 */
+  var s;      /* should get default value "" */
+  var b;      /* should get default value false */
+  
+  print(i);
+  print(s);
+  print(b);
+}
+
+/*
+*OUT*
+0
+
+false
+*OUT*
+*/ 

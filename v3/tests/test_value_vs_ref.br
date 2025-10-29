@@ -1,0 +1,36 @@
+/* Simple test to verify pass-by-value vs pass-by-reference */
+
+def modify_by_valuev(xi) {
+  xi = 999;
+}
+
+def modify_by_refv(&xi) {
+  xi = 888;
+}
+
+def main() {
+  var test_vali;
+  test_vali = 42;
+  
+  print("Original value:");
+  print(test_vali);
+  
+  modify_by_valuev(test_vali);
+  print("After pass-by-value:");
+  print(test_vali);
+  
+  modify_by_refv(test_vali);
+  print("After pass-by-reference:");
+  print(test_vali);
+}
+
+/*
+*OUT*
+Original value:
+42
+After pass-by-value:
+42
+After pass-by-reference:
+888
+*OUT*
+*/
