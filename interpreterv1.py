@@ -130,6 +130,8 @@ class Interpreter(InterpreterBase):
 def main():
     interpreter = Interpreter()
 
+    # The code below is meant to help you test your interpreter on your own Brewin programs.
+    # To run this main function, create a file test.br in the same directory and put Brewin code in it.
     with open("./test.br", "r") as f:
         program = f.read()
 
