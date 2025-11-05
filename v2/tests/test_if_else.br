@@ -1,0 +1,29 @@
+def f(num) {
+    return num;
+}
+
+def func(x) {
+    if (f(x) > 0) {
+        print(x);
+    } else {
+        print(-x);
+    }
+}
+
+def main() {
+  var x;
+  x = -5;
+  var y;
+  y = 13;
+  func(x);
+  func(y);
+}
+
+/*
+*IN*
+*IN*
+*OUT*
+5
+13
+*OUT*
+*/

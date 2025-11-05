@@ -1,0 +1,10 @@
+def main() {
+  print(nil == print(true));
+}
+
+/*
+*OUT*
+true
+true
+*OUT*
+*/

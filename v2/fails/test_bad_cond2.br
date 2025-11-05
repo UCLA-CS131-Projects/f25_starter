@@ -1,0 +1,15 @@
+def main() {
+  var a;
+  a = "abc";
+  a = a;
+  if (a) { 
+    print("true"); 
+    a = a;
+  }
+}
+
+/*
+*OUT*
+ErrorType.TYPE_ERROR
+*OUT*
+*/

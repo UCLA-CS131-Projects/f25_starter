@@ -1,0 +1,23 @@
+def Foo(num) {
+    return num + 1;
+}
+
+def foo(num) {
+    return num - 1;
+}
+
+def main() {
+  var x;
+  x = 0;
+  print(Foo(x));
+  print(foo(x));
+}
+
+/*
+*IN*
+*IN*
+*OUT*
+1
+-1
+*OUT*
+*/

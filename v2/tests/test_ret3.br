@@ -1,0 +1,22 @@
+def foo() {
+ var q;
+ q = 3;
+ while (q > 0) {
+  print(q);
+  return q;
+  q = q - 1;
+ }
+}
+
+def main() {
+ var x;
+ x = foo();
+ print(x);
+}
+
+/*
+*OUT*
+3
+3
+*OUT*
+*/

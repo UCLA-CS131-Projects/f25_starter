@@ -1,0 +1,11 @@
+def foo() {
+  print("hello");
+}
+
+/*
+*IN*
+*IN*
+*OUT*
+ErrorType.NAME_ERROR
+*OUT*
+*/

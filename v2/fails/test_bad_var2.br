@@ -1,0 +1,12 @@
+def main() {
+  var x;
+  x = y + 1;
+}
+
+/*
+*IN*
+*IN*
+*OUT*
+ErrorType.NAME_ERROR
+*OUT*
+*/

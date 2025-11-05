@@ -1,0 +1,19 @@
+def foo() {
+  var a;
+  a = 20;
+  print(a);
+}
+
+def main() {
+  var a;
+  a = 5;
+  foo();
+  print(a);
+}
+
+/*
+*OUT*
+20
+5
+*OUT*
+*/

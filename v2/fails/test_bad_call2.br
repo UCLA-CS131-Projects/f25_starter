@@ -1,0 +1,13 @@
+def main() {
+  foo(10,20);
+}
+
+def foo(a,b,c) {
+ print(a);
+}
+
+/*
+*OUT*
+ErrorType.NAME_ERROR
+*OUT*
+*/

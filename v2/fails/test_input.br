@@ -1,0 +1,10 @@
+def main() {
+  var a;
+  a = inputi("this","is a test");
+}
+
+/*
+*OUT*
+ErrorType.NAME_ERROR
+*OUT*
+*/

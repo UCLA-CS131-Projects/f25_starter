@@ -1,0 +1,15 @@
+def foo() {
+  print("hello");
+}
+
+def main() {
+  bar();
+}
+
+/*
+*IN*
+*IN*
+*OUT*
+ErrorType.NAME_ERROR
+*OUT*
+*/

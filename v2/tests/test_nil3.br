@@ -1,0 +1,23 @@
+def foo() {
+  print("hello");
+  /* no explicit return command */
+}
+
+def bar() {
+  return; /* no return value specified */
+}
+
+def main() {
+  var val;
+  val = nil;
+  if (foo() == val && bar() == nil) { print("this should print!"); }
+}
+
+/*
+*IN*
+*IN*
+*OUT*
+hello
+this should print!
+*OUT*
+*/

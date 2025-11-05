@@ -1,0 +1,9 @@
+def main() {
+  print(!true && false);
+}
+
+/*
+*OUT*
+false
+*OUT*
+*/

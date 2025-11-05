@@ -1,0 +1,10 @@
+def main() {
+  var v;
+  var v;
+}
+
+/*
+*OUT*
+ErrorType.NAME_ERROR
+*OUT*
+*/

@@ -1,0 +1,20 @@
+def foo(c) {
+  if (c == 10) {
+    var c;
+    c = "hi";
+    print("This shouldn't print");
+    print(c);
+  }
+}
+
+def main() {
+  foo(10);
+}
+
+/*
+*IN*
+*IN*
+*OUT*
+ErrorType.NAME_ERROR
+*OUT*
+*/

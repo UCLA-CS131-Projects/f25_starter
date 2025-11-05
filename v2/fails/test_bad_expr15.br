@@ -1,0 +1,11 @@
+def main() {
+  print(!"a string");
+}
+
+/*
+*IN*
+*IN*
+*OUT*
+ErrorType.TYPE_ERROR
+*OUT*
+*/

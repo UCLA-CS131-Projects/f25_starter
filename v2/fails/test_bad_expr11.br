@@ -1,0 +1,11 @@
+def main() {
+  print(true <= false);
+}
+
+/*
+*IN*
+*IN*
+*OUT*
+ErrorType.TYPE_ERROR
+*OUT*
+*/

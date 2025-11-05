@@ -1,0 +1,19 @@
+def main() {
+  var i;
+  i = 0;
+  while (i+3 < 5) {
+    print(i);
+    i = i + 1;
+  }
+  print("All done looping!");
+}
+
+/*
+*IN*
+*IN*
+*OUT*
+0
+1
+All done looping!
+*OUT*
+*/

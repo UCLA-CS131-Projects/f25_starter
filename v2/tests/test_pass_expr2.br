@@ -1,0 +1,15 @@
+def bletch(a,b,c) {
+  print("The answer is: ", a+b*c);
+}
+
+def main() {
+  bletch(1,3,2+4);
+}
+
+/*
+*IN*
+*IN*
+*OUT*
+The answer is: 19
+*OUT*
+*/

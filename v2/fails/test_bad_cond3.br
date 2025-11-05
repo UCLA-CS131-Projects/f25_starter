@@ -1,0 +1,11 @@
+def main() {
+  var a;
+  a = nil;
+  if (a) { print("true"); }
+}
+
+/*
+*OUT*
+ErrorType.TYPE_ERROR
+*OUT*
+*/

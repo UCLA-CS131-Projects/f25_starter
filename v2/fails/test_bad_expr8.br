@@ -1,0 +1,10 @@
+def main() {
+ var a;
+ a = true || 0;
+}
+
+/*
+*OUT*
+ErrorType.TYPE_ERROR
+*OUT*
+*/

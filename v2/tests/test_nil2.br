@@ -1,0 +1,15 @@
+def foo(a) {
+  if (a == nil) { print(1); } else { print(2); }
+}
+
+def main() {
+ foo(nil);
+ foo(10);
+}
+
+/*
+*OUT*
+1
+2
+*OUT*
+*/

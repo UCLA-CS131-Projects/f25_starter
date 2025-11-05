@@ -1,0 +1,15 @@
+def main() {
+  var x;
+  x = nil;
+  if (x) {
+    print("This shouldn't print");
+  }
+}
+
+/*
+*IN*
+*IN*
+*OUT*
+ErrorType.TYPE_ERROR
+*OUT*
+*/

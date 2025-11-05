@@ -1,0 +1,25 @@
+def f(a) {
+    return a + 5;
+}
+
+def main() {
+  var x;
+  x = 11;
+  if (f(x) > 5) {
+    print("This should print 11: ", x);
+    print("This should print 16: ", f(x));
+    if (x < 30 && x > 10) {
+        print("This should print 33: ", 3*x);
+    }
+  }
+}
+
+/*
+*IN*
+*IN*
+*OUT*
+This should print 11: 11
+This should print 16: 16
+This should print 33: 33
+*OUT*
+*/

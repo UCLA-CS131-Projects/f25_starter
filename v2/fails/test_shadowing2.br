@@ -1,0 +1,17 @@
+def main() {
+  var c;
+  c = 10;
+  while (c == 10) {
+    var c;  /* name error */
+    c = "hi";
+    print("This shouldn't print");
+  }
+}
+
+/*
+*IN*
+*IN*
+*OUT*
+ErrorType.NAME_ERROR
+*OUT*
+*/

@@ -1,0 +1,30 @@
+def main() {
+  var x;
+  x = 5;
+  var my_bool;
+  my_bool = true;
+
+  while (my_bool) {
+    var q;
+    q = 0;
+    while (q < x) {
+      print(q*q);
+      q = q + 1;
+    }
+    my_bool = false;
+  }
+  print("All done looping!");
+}
+
+/*
+*IN*
+*IN*
+*OUT*
+0
+1
+4
+9
+16
+All done looping!
+*OUT*
+*/

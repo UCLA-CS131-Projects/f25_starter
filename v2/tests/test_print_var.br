@@ -1,0 +1,13 @@
+def main() {
+  var b;
+  b = 10;
+  print(b);  
+}
+
+/*
+*IN*
+*IN*
+*OUT*
+10
+*OUT*
+*/

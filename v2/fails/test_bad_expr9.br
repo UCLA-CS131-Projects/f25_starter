@@ -1,0 +1,11 @@
+def main() {
+  print("str" > "otherstr");
+}
+
+/*
+*IN*
+*IN*
+*OUT*
+ErrorType.TYPE_ERROR
+*OUT*
+*/

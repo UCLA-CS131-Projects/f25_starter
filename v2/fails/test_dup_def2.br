@@ -1,0 +1,14 @@
+def main() {
+  var c;
+  if (true) {
+    var c;  /* should trigger NAME_ERROR */
+  }
+}
+
+/*
+*IN*
+*IN*
+*OUT*
+ErrorType.NAME_ERROR
+*OUT*
+*/

@@ -1,0 +1,24 @@
+def foo(c) {
+  if (c == 10) {
+    c = "hi";
+    print(c);  /* prints hi */
+  }
+  print(c);  /* prints hi */
+}
+
+def main() {
+  var x;
+  x = 10;
+  foo(x);
+  print(x);  /* prints 10 */
+}
+
+/*
+*IN*
+*IN*
+*OUT*
+hi
+hi
+10
+*OUT*
+*/

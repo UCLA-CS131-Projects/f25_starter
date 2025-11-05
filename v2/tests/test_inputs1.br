@@ -1,0 +1,15 @@
+def main() {
+  var a;
+  a = inputs("Enter a string: ");
+  print(a);  
+}
+
+/*
+*IN*
+foobar
+*IN*
+*OUT*
+Enter a string: 
+foobar
+*OUT*
+*/

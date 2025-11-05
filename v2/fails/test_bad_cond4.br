@@ -1,0 +1,19 @@
+def main() {
+  var i;
+  i = 0;
+  while (i < 10) {
+    i = i + 1;
+    if (i == 2) {
+        i = "hello"; /* will result in Type Error */
+    }
+  }
+  print("This should not print");
+}
+
+/*
+*IN*
+*IN*
+*OUT*
+ErrorType.TYPE_ERROR
+*OUT*
+*/

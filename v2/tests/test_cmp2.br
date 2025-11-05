@@ -1,0 +1,35 @@
+def main() {
+  print(true == false);   /* prints false */
+  print(true == true);    /* prints true */
+  print(true == 5);       /* prints false */
+  print(true == "true");  /* prints false */
+  print(true == nil);     /* prints false */
+  print(nil == nil);      /* prints true */
+  print(5 == "somestr");  /* prints false */
+  print(5 == 6);          /* prints false */
+  print(5 == 5);          /* prints true */
+  print(5 == nil);        /* prints false */
+  print("str" == nil);    /* prints false */
+  print("str" == "str");  /* prints true */
+  print("str" == "nil");  /* prints false */
+}
+
+/*
+*IN*
+*IN*
+*OUT*
+false
+true
+false
+false
+false
+true
+false
+false
+true
+false
+false
+true
+false
+*OUT*
+*/

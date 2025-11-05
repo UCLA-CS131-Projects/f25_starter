@@ -1,0 +1,22 @@
+def foo(x) {
+  if (x < 0) {
+    print(x);
+    return -x;
+    print("this will not print");
+  }
+  print("this will not print either");
+  return 5*x;
+}
+
+def main() {
+  print("the positive value is ", foo(-1));
+}
+
+/*
+*IN*
+*IN*
+*OUT*
+-1
+the positive value is 1
+*OUT*
+*/
