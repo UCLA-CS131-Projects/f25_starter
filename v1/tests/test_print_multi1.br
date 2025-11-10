@@ -1,0 +1,11 @@
+def main() {
+  print("hello ","world",10);
+}
+
+/*
+*IN*
+*IN*
+*OUT*
+hello world10
+*OUT*
+*/
