@@ -1,0 +1,29 @@
+def createLambdaFuncf() {
+  return lambdai(xi) {
+    return xi * 2;
+  };
+}
+
+def main() {
+  var lambda1f;
+  var lambda2f;
+  var lambda3f;
+  
+  lambda1f = lambdai(xi) {
+    return xi * 2;
+  };
+  
+  print(lambda1f == lambda1f);
+  
+  lambda2f = createLambdaFuncf();
+  lambda3f = createLambdaFuncf();
+  
+  print(lambda2f == lambda3f);
+}
+
+/*
+*OUT*
+true
+false
+*OUT*
+*/ 

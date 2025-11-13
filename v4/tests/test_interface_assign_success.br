@@ -1,0 +1,40 @@
+interface A {
+  vali;
+  messages;
+  validb;
+}
+
+def main() {
+  var compliantObjecto;
+  var xA;
+  
+  /* Create an object that complies with interface A */
+  compliantObjecto = @;
+  compliantObjecto.vali = 100;
+  compliantObjecto.messages = "Interface compliant";
+  compliantObjecto.validb = true;
+  
+  /* This assignment should succeed - object meets interface A requirements */
+  xA = compliantObjecto;
+  
+  /* Verify assignment worked by accessing fields through interface variable */
+  print("Assignment successful! Interface A object contains:");
+  print("vali: ");
+  print(xA.vali);
+  print(", messages: ");
+  print(xA.messages);
+  print(", validb: ");
+  print(xA.validb);
+}
+
+/*
+*OUT*
+Assignment successful! Interface A object contains:
+vali: 
+100
+, messages: 
+Interface compliant
+, validb: 
+true
+*OUT*
+*/

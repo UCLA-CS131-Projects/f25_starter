@@ -1,0 +1,27 @@
+interface A {
+  vali;
+  messages;
+  validb;
+}
+
+def main() {
+  var nonCompliantObjecto;
+  var xA;
+  
+  /* Create an object that does NOT comply with interface A */
+  nonCompliantObjecto = @;
+  nonCompliantObjecto.vali = 200;
+  nonCompliantObjecto.messages = "Missing required field";
+  /* Missing the required 'validb' field for interface A */
+  
+  /* This assignment should fail - object doesn't meet interface A requirements */
+  xA = nonCompliantObjecto;
+  
+  print("This should not print - assignment should have failed!");
+}
+
+/*
+*OUT*
+ErrorType.TYPE_ERROR
+*OUT*
+*/

@@ -1,0 +1,19 @@
+/* Test that regular functions don't have selfo in scope */
+
+def main() {
+  var funcf;
+  
+  /* Define a function that tries to access selfo */
+  funcf = lambdav() {
+    print(selfo);
+  };
+  
+  /* Call the function - should fail because selfo is not in scope */
+  funcf();
+}
+
+/*
+*OUT*
+ErrorType.NAME_ERROR
+*OUT*
+*/

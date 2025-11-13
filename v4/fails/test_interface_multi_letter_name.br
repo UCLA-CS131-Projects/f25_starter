@@ -1,0 +1,17 @@
+/* Test for interface names longer than one letter */
+
+/* Error: Interface names must be single letters */
+interface AB {
+  vali;
+  messages;
+}
+
+def main() {
+  print("This should not execute - multi-letter interface name should have failed!");
+}
+
+/*
+*OUT*
+ErrorType.NAME_ERROR
+*OUT*
+*/

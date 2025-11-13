@@ -1,0 +1,137 @@
+/* Test passing function variables as parameters and calling them */
+
+def addi(ai, bi) {
+  return ai + bi;
+}
+
+def multiplyi(ai, bi) {
+  return ai * bi;
+}
+
+def subtracti(ai, bi) {
+  return ai - bi;
+}
+
+/* Higher-order function that takes a function parameter */
+def applyOperationi(funcf, xi, yi) {
+  var resulti;
+  print("Applying operation to ");
+  print(xi);
+  print(" and ");
+  print(yi);
+  print(": ");
+  
+  /* Call the function through the parameter */
+  resulti = funcf(xi, yi);
+  print(resulti);
+  print("\n");
+  
+  return resulti;
+}
+
+/* Function that takes a function and applies it twice */
+def doubleApplyi(funcf, valuei) {
+  var resulti;
+  print("Double applying function to ");
+  print(valuei);
+  print(": ");
+  
+  /* Apply the function twice */
+  resulti = funcf(valuei, valuei);
+  print(resulti);
+  print("\n");
+  
+  return resulti;
+}
+
+def main() {
+  var addFuncf;
+  var mulFuncf;
+  var subFuncf;
+  var result1i;
+  var result2i;
+  var result3i;
+  var result4i;
+  var result5i;
+  
+  /* Store functions in variables */
+  addFuncf = addi;
+  mulFuncf = multiplyi;
+  subFuncf = subtracti;
+  
+  print("=== Function Parameter Test ===\n");
+  
+  /* Pass different function variables to applyOperation */
+  result1i = applyOperationi(addFuncf, 10, 5);
+  result2i = applyOperationi(mulFuncf, 7, 3);
+  result3i = applyOperationi(subFuncf, 20, 8);
+  
+  print("=== Double Apply Test ===\n");
+  
+  /* Pass function variables to doubleApply */
+  result4i = doubleApplyi(addFuncf, 6);
+  result5i = doubleApplyi(mulFuncf, 4);
+  
+  print("=== Final Results ===\n");
+  print("Add result: ");
+  print(result1i);
+  print("\nMultiply result: ");
+  print(result2i);
+  print("\nSubtract result: ");
+  print(result3i);
+  print("\nDouble add result: ");
+  print(result4i);
+  print("\nDouble multiply result: ");
+  print(result5i);
+  print("\n");
+}
+
+/*
+*OUT*
+=== Function Parameter Test ===\n
+Applying operation to 
+10
+ and 
+5
+: 
+15
+\n
+Applying operation to 
+7
+ and 
+3
+: 
+21
+\n
+Applying operation to 
+20
+ and 
+8
+: 
+12
+\n
+=== Double Apply Test ===\n
+Double applying function to 
+6
+: 
+12
+\n
+Double applying function to 
+4
+: 
+16
+\n
+=== Final Results ===\n
+Add result: 
+15
+\nMultiply result: 
+21
+\nSubtract result: 
+12
+\nDouble add result: 
+12
+\nDouble multiply result: 
+16
+\n
+*OUT*
+*/

@@ -1,0 +1,14 @@
+def main() {
+  if (true) {
+    bvar i;
+    i = 5;
+    var i;  /* This should work since different scope */
+    print(i);
+  }
+}
+
+/*
+*OUT*
+5
+*OUT*
+*/

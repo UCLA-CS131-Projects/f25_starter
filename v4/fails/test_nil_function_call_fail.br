@@ -1,0 +1,20 @@
+def fooi(xi) {
+  return 2*xi;
+}
+
+def main() {
+  var varf;
+  var resulti;
+  
+  /* varf is nil by default, not assigned to any function */
+  /* Trying to call through nil function variable should fail */
+  resulti = varf(10);
+  
+  print("This should not print - call should have failed!");
+}
+
+/*
+*OUT*
+ErrorType.FAULT_ERROR
+*OUT*
+*/

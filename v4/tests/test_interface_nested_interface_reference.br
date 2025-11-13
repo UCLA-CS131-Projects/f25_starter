@@ -1,0 +1,158 @@
+interface B {
+  names;
+  valuei;
+}
+
+interface C {
+  types;
+  datas;
+}
+
+interface A {
+  variableB;  /* This field should reference an interface B */
+  variableC;  /* This field should reference an interface C */
+  extraFields;
+}
+
+def processAObjectv(objA) {
+  print("Processing interface A object:");
+  print("Extra field: ");
+  print(objA.extraFields);
+  print("B name: ");
+  print(objA.variableB.names);
+  print("B value: ");
+  print(objA.variableB.valuei);
+  print("C type: ");
+  print(objA.variableC.types);
+  print("C data: ");
+  print(objA.variableC.datas);
+}
+
+def main() {
+  var objBo;
+  var objCo;
+  var objAo;
+  var varA;
+  var varB;
+  var varC;
+  
+  /* Create an object that complies with interface B */
+  objBo = @;
+  objBo.names = "Interface B Object";
+  objBo.valuei = 42;
+  
+  /* Create an object that complies with interface C */
+  objCo = @;
+  objCo.types = "config";
+  objCo.datas = "important data";
+  
+  /* Create an object that complies with interface A with nested interface references */
+  objAo = @;
+  objAo.variableB = objBo;  /* Assign interface B compliant object */
+  objAo.variableC = objCo;  /* Assign interface C compliant object */
+  objAo.extraFields = "additional info";
+  
+  /* Test 1: Assign to interface A variable */
+  varA = objAo;
+  print("Test 1 - Interface A assignment with nested interface references:");
+  print("varA.extraFields: ");
+  print(varA.extraFields);
+  print("varA.variableB.names: ");
+  print(varA.variableB.names);
+  print("varA.variableC.types: ");
+  print(varA.variableC.types);
+  
+  /* Test 2: Extract nested interface objects and assign to their respective interface variables */
+  varB = varA.variableB;
+  varC = varA.variableC;
+  print("Test 2 - Extracted nested interface objects:");
+  print("Extracted B object - names: ");
+  print(varB.names);
+  print(", valuei: ");
+  print(varB.valuei);
+  print("Extracted C object - types: ");
+  print(varC.types);
+  print(", datas: ");
+  print(varC.datas);
+  
+  /* Test 3: Pass interface A object to function */
+  processAObjectv(varA);
+  
+  /* Test 4: Create nested interface structure directly inline */
+  var complexObjAo;
+  var complexVarA;
+  
+  complexObjAo = @;
+  complexObjAo.extraFields = "complex structure";
+  
+  /* Create nested interface B object directly */
+  var objBDirecto;
+  objBDirecto = @;
+  objBDirecto.names = "Direct B";
+  objBDirecto.valuei = 999;
+  complexObjAo.variableB = objBDirecto;
+  
+  /* Create nested interface C object directly */
+  var objCDirecto;
+  objCDirecto = @;
+  objCDirecto.types = "inline";
+  objCDirecto.datas = "inline data";
+  complexObjAo.variableC = objCDirecto;
+  
+  complexVarA = complexObjAo;
+  print("Test 4 - Direct inline nested interface creation:");
+  print("Complex A object with inline B name: ");
+  print(complexVarA.variableB.names);
+  print(" and inline C type: ");
+  print(complexVarA.variableC.types);
+  
+  /* Test 5: Modify nested interface objects and verify reference semantics */
+  complexVarA.variableB.valuei = 1234;
+  print("Test 5 - After modifying nested interface B value:");
+  print("Original object B value: ");
+  print(complexObjAo.variableB.valuei);
+  print("Interface A variable B value: ");
+  print(complexVarA.variableB.valuei);
+}
+
+/*
+*OUT*
+Test 1 - Interface A assignment with nested interface references:
+varA.extraFields: 
+additional info
+varA.variableB.names: 
+Interface B Object
+varA.variableC.types: 
+config
+Test 2 - Extracted nested interface objects:
+Extracted B object - names: 
+Interface B Object
+, valuei: 
+42
+Extracted C object - types: 
+config
+, datas: 
+important data
+Processing interface A object:
+Extra field: 
+additional info
+B name: 
+Interface B Object
+B value: 
+42
+C type: 
+config
+C data: 
+important data
+Test 4 - Direct inline nested interface creation:
+Complex A object with inline B name: 
+Direct B
+ and inline C type: 
+inline
+Test 5 - After modifying nested interface B value:
+Original object B value: 
+1234
+Interface A variable B value: 
+1234
+*OUT*
+*/

@@ -1,0 +1,25 @@
+/* Test object method with selfo field access */
+
+def main() {
+  var objo;
+  
+  /* Create an empty object */
+  objo = @;
+  
+  /* Add a field to the object */
+  objo.valuesi = 42;
+  
+  /* Define a method that accesses the field via selfo */
+  objo.getValuesf = lambdai() {
+    return selfo.valuesi;
+  };
+  
+  /* Call the method and print the result */
+  print(objo.getValuesf());
+}
+
+/*
+*OUT*
+42
+*OUT*
+*/

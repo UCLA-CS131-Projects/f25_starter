@@ -1,0 +1,25 @@
+def main() {
+  var o;
+  var f;
+  
+  /* Create object with a property */
+  o = @;
+  o.valuei = 5;
+  
+  /* Create lambda that captures 'obj' and mutates it */
+  f = lambdav() {
+    o.valuei = 10;
+  };
+  
+  /* Call lambda */
+  f();
+  
+  /* Verify mutation is visible outside lambda */
+  print(o.valuei);
+}
+
+/*
+*OUT*
+10
+*OUT*
+*/ 

@@ -1,0 +1,76 @@
+/* Test calling functions through nested object fields */
+
+def addi(xi, yi) {
+  return xi + yi;
+}
+
+def multiplyi(xi, yi) {
+  return xi * yi;
+}
+
+def squarei(xi) {
+  return xi * xi;
+}
+
+def printMessagev(messages) {
+  print(messages);
+}
+
+def main() {
+  var ob1o;
+  var ob2o;
+  var result1i;
+  var result2i;
+  var result3i;
+  
+  /* Create nested objects */
+  ob1o = @;
+  ob2o = @;
+  
+  /* Set function fields in the inner object */
+  ob2o.addFuncf = addi;
+  ob2o.mulFuncf = multiplyi;
+  ob2o.squareFuncf = squarei;
+  ob2o.printFuncf = printMessagev;
+  
+  /* Set the inner object as a field of the outer object */
+  ob1o.ob2o = ob2o;
+  
+  /* Call functions through nested object fields */
+  result1i = ob1o.ob2o.addFuncf(10, 5);
+  print(result1i);
+  
+  result2i = ob1o.ob2o.mulFuncf(7, 3);
+  print(result2i);
+  
+  result3i = ob1o.ob2o.squareFuncf(10);
+  print(result3i);
+  
+  /* Call void function through nested object field */
+  ob1o.ob2o.printFuncf("Hello from nested object function!");
+  
+  /* Test with different arguments */
+  result1i = ob1o.ob2o.addFuncf(20, 30);
+  print(result1i);
+  
+  result2i = ob1o.ob2o.mulFuncf(4, 8);
+  print(result2i);
+  
+  result3i = ob1o.ob2o.squareFuncf(6);
+  print(result3i);
+  
+  ob1o.ob2o.printFuncf("Another message from nested object function!");
+}
+
+/*
+*OUT*
+15
+21
+100
+Hello from nested object function!
+50
+32
+36
+Another message from nested object function!
+*OUT*
+*/ 
