@@ -1,0 +1,13 @@
+/* Test that comparing a function variable and object variable (both nil) returns false */
+def main() {
+    var o;
+    var f;
+    
+    print(f != o);
+}
+
+/*
+*OUT*
+false
+*OUT*
+*/ 

@@ -1,0 +1,24 @@
+def fooi(xi) {
+  return 2*xi;
+}
+
+def main() {
+  var varf;
+  var resulti;
+  
+  /* Store function in variable */
+  varf = fooi;
+  
+  /* Call function through variable */
+  resulti = varf(10);
+  
+  print("Result: ");
+  print(resulti);
+}
+
+/*
+*OUT*
+Result: 
+20
+*OUT*
+*/

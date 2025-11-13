@@ -1,0 +1,19 @@
+def main() {
+  var xi;
+  xi = 10;
+  
+  var mylambf;
+  mylambf = lambdai() { 
+    return xi; /* xi is captured here */
+  };
+  
+  xi = 20; /* This reassignment should not affect the lambda */
+  
+  print(mylambf());
+}
+
+/*
+*OUT*
+10
+*OUT*
+*/

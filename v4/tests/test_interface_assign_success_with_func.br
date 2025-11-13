@@ -1,0 +1,30 @@
+interface A {
+  vali;
+  foof(i);
+}
+
+def foov(i) {
+  return i * 2;
+}
+
+def main() {
+  var compliantObjecto;
+  var xA;
+  
+  /* Create an object that complies with interface A */
+  compliantObjecto = @;
+  compliantObjecto.vali = 100;
+  compliantObjecto.foof = foov;
+  
+  /* This assignment should succeed - object meets interface A requirements */
+  xA = compliantObjecto;
+  
+  /* Verify assignment worked by accessing field through interface variable */
+  print(xA.vali);
+}
+
+/*
+*OUT*
+100
+*OUT*
+*/ 

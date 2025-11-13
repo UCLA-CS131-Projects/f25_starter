@@ -1,0 +1,13 @@
+def main() {
+  var xi;
+  var xi;  /* This should fail - duplicate variable declaration in same block */
+  
+  xi = 5;
+  print(xi);
+}
+
+/*
+*OUT*
+ErrorType.NAME_ERROR
+*OUT*
+*/

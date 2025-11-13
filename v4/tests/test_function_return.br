@@ -1,0 +1,66 @@
+/* Test returning a function from another function */
+
+def addFunci(xi, yi) {
+  return xi + yi;
+}
+
+def multiplyFunci(xi, yi) {
+  return xi * yi;
+}
+
+def subtractFunci(xi, yi) {
+  return xi - yi;
+}
+
+/* Function that returns different functions based on input */
+def returnsFunctionf(operationi) {
+  if (operationi == 1) {
+    return addFunci;
+  } 
+  else 
+  {
+    if (operationi == 2) {
+        return multiplyFunci;
+    } 
+    else 
+    {
+        return subtractFunci;
+    }
+  }
+}
+
+def main() {
+  var selectedFuncf;
+  var result1i;
+  var result2i;
+  var result3i;
+  
+  /* Get addition function */
+  selectedFuncf = returnsFunctionf(1);
+  result1i = selectedFuncf(5, 3);
+  print("Addition result: ");
+  print(result1i);
+  
+  /* Get multiplication function */
+  selectedFuncf = returnsFunctionf(2);
+  result2i = selectedFuncf(5, 3);
+  print("Multiplication result: ");
+  print(result2i);
+  
+  /* Get subtraction function */
+  selectedFuncf = returnsFunctionf(3);
+  result3i = selectedFuncf(5, 3);
+  print("Subtraction result: ");
+  print(result3i);
+}
+
+/*
+*OUT*
+Addition result: 
+8
+Multiplication result: 
+15
+Subtraction result: 
+2
+*OUT*
+*/ 

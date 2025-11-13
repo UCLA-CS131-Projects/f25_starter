@@ -1,0 +1,13 @@
+def main() {
+  var f;
+  f = lambdai(xi) { 
+    return xi + 10; 
+  };
+  print(f(5));
+}
+
+/*
+*OUT*
+15
+*OUT*
+*/

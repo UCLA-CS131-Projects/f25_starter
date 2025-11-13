@@ -1,0 +1,17 @@
+def main() {
+  var f;
+  
+  /* Create lambda with two parameters */
+  f = lambdai(xi, yi) {
+    return xi + yi;
+  };
+  
+  /* Call with wrong number of arguments */
+  f(10);
+}
+
+/*
+*OUT*
+ErrorType.TYPE_ERROR
+*OUT*
+*/ 

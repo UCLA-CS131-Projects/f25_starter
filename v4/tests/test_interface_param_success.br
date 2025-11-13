@@ -1,0 +1,28 @@
+interface A {
+  vali;
+  messages;
+}
+
+def foov(objA) {
+  print("Function received object with vali: ");
+  print(objA.vali);
+  print(" and messages: ");
+  print(objA.messages);
+}
+
+def main() {
+  var myObjecto;
+  myObjecto = @;
+  myObjecto.vali = 42;
+  myObjecto.messages = "Hello Interface A!";
+  foov(myObjecto);
+}
+
+/*
+*OUT*
+Function received object with vali: 
+42
+ and messages: 
+Hello Interface A!
+*OUT*
+*/
