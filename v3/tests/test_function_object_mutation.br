@@ -1,0 +1,22 @@
+def modifyObjectv(objo) {
+  objo.messages = "Modified message!";
+  objo.newFields = "New field added!";
+}
+
+def main() {
+  var myObjecto;
+  myObjecto = @;
+  myObjecto.messages = "Original message";
+  
+  modifyObjectv(myObjecto);
+  
+  print(myObjecto.messages);
+  print(myObjecto.newFields);
+}
+
+/*
+*OUT*
+Modified message!
+New field added!
+*OUT*
+*/ 

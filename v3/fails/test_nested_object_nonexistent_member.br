@@ -1,0 +1,16 @@
+def main() {
+  var o;
+  o = @;
+  var nestedo;
+  nestedo = @;
+  
+  o.nestedo = nestedo;
+  o.nestedo.existingi = 5;
+  print(o.nestedo.nonexistent);
+}
+
+/*
+*OUT*
+ErrorType.NAME_ERROR
+*OUT*
+*/ 

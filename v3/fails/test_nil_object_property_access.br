@@ -1,0 +1,15 @@
+def main() {
+  var objecto;
+  
+  /* Explicitly assign nil to the object variable */
+  objecto = nil;
+  
+  /* Trying to access a property of a nil object should fail */
+  print(objecto.field);
+}
+
+/*
+*OUT*
+ErrorType.FAULT_ERROR
+*OUT*
+*/

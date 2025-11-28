@@ -1,0 +1,12 @@
+def main() {
+  var o;
+  o = @;
+  o.xi = 5;
+  print(o.xi);
+}
+
+/*
+*OUT*
+5
+*OUT*
+*/ 

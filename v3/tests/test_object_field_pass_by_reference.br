@@ -1,0 +1,26 @@
+def modifyFieldv(&fieldi) {
+  fieldi = 42;
+}
+
+def main() {
+  var objo;
+  objo = @;
+  objo.fi = 10;
+  
+  print("Before modifyFieldv:");
+  print(objo.fi);
+  
+  modifyFieldv(objo.fi);
+  
+  print("After modifyFieldv:");
+  print(objo.fi);
+}
+
+/*
+*OUT*
+Before modifyFieldv:
+10
+After modifyFieldv:
+42
+*OUT*
+*/

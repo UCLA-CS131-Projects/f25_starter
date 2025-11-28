@@ -1,0 +1,24 @@
+def main() {
+  var i;      /* int variable */
+  var s;      /* string variable */
+  var b;      /* bool variable */
+  
+  /* assign string to int - should fail */
+  i = "hello";
+  
+  /* assign int to string - should fail */
+  s = 42;
+  
+  /* assign string to bool - should fail */
+  b = "true";
+  
+  print(i);
+  print(s);
+  print(b);
+}
+
+/*
+*OUT*
+ErrorType.TYPE_ERROR
+*OUT*
+*/ 

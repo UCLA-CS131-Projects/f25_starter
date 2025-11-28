@@ -1,0 +1,15 @@
+def getInti() {
+  return 42;
+}
+
+def main() {
+  var resulti;
+  resulti = getInti();
+  print(resulti);
+}
+
+/*
+*OUT*
+42
+*OUT*
+*/ 

@@ -1,0 +1,19 @@
+def fooi() {
+  print("hi");
+  while (false) {
+    return;
+  }
+}
+
+def main() {
+  print(fooi());
+  print("bye");
+}
+
+/*
+*OUT*
+hi
+0
+bye
+*OUT*
+*/ 

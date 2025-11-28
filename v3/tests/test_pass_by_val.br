@@ -1,0 +1,16 @@
+def foov(xi) {
+ xi = 5;
+}
+
+def main() {
+ var ai;
+ ai = 10;
+ foov(ai);
+ print(ai);
+}
+
+/*
+*OUT*
+10
+*OUT*
+*/ 

@@ -1,0 +1,10 @@
+def main() {
+  var objo;
+  print(objo == nil);
+}
+
+/*
+*OUT*
+true
+*OUT*
+*/ 

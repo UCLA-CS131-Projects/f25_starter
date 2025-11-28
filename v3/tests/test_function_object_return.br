@@ -1,0 +1,24 @@
+def foo(objo) {
+  objo.messages = "Modified by foov!";
+  objo.newFields = "Added by foov!";
+  return objo;
+}
+
+def main() {
+  var myObjecto;
+  myObjecto = @;
+  myObjecto.messages = "Original message";
+  
+  var resulto;
+  resulto = foo(myObjecto);
+  
+  print(resulto.messages);
+  print(resulto.newFields);
+}
+
+/*
+*OUT*
+Modified by foov!
+Added by foov!
+*OUT*
+*/ 

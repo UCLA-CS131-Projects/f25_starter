@@ -1,0 +1,18 @@
+def foov(o) {
+ o = @;
+ o.i = 20;
+}
+
+def main() {
+  var xo;
+  xo = @;
+  xo.i = 10;
+  foov(xo);
+  print(xo.i);
+}
+
+/*
+*OUT*
+10
+*OUT*
+*/ 

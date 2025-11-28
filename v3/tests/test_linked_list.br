@@ -1,0 +1,50 @@
+def main() {
+  /* Create four linked list nodes */
+  var node1o;
+  var node2o;
+  var node3o;
+  var node4o;
+
+  node1o = @;
+  node2o = @;
+  node3o = @;
+  node4o = @;
+  
+  node1o.datai = 10;
+  node1o.nexto = node2o;
+  
+  node2o.datai = 20;
+  node2o.nexto = node3o;
+
+  node3o.datai = 30;
+  node3o.nexto = node4o;
+  
+  node4o.datai = 40;
+  node4o.nexto = nil;
+  
+  
+  /* Traverse and print the linked list */
+  var curo;
+  curo = node1o;
+  print(curo.datai);
+  curo = curo.nexto;
+  print(curo.datai);
+  curo = curo.nexto;
+  print(curo.datai);
+  curo = curo.nexto;
+  print(curo.datai);
+  curo = curo.nexto;
+  if (curo == nil) {
+    print("nil");
+  }
+}
+
+/*
+*OUT*
+10
+20
+30
+40
+nil
+*OUT*
+*/

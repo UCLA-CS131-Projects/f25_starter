@@ -1,0 +1,10 @@
+def main() {
+  var localvarv;
+  print("This local variable has void type");
+}
+
+/*
+*OUT*
+ErrorType.TYPE_ERROR
+*OUT*
+*/ 

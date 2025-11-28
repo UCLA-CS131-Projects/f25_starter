@@ -1,0 +1,82 @@
+/* Test case: function takes ref to object, returns that parameter,
+   calling function assigns return value to new variable,
+   verify original variable unchanged when properties modified */
+
+def return_ref_paramo(&refo) {
+  return refo;
+}
+
+def main() {
+  var originalo;
+  var newo;
+  
+  originalo = @;
+  originalo.valuei = 100;
+  originalo.names = "original";
+  
+  print("Original object before call:");
+  print(originalo.valuei);
+  print(originalo.names);
+  
+  /* Call function that takes ref and returns it, assign to new variable */
+  newo = return_ref_paramo(originalo);
+  
+  print("Returned object assigned to new variable:");
+  print(newo.valuei);
+  print(newo.names);
+  
+  /* Modify the new object by assigning new object reference */
+  var temp_newo;
+  temp_newo = @;
+  temp_newo.valuei = 999;
+  temp_newo.names = "modified_new";
+  newo = temp_newo;
+  
+  print("After modifying new object:");
+  print("Original object:");
+  print(originalo.valuei);
+  print(originalo.names);
+  print("New object:");
+  print(newo.valuei);
+  print(newo.names);
+  
+  /* Now modify the original object by assigning new object reference */
+  var temp_originalo;
+  temp_originalo = @;
+  temp_originalo.valuei = 777;
+  temp_originalo.names = "modified_original";
+  originalo = temp_originalo;
+  
+  print("After modifying original object:");
+  print("Original object:");
+  print(originalo.valuei);
+  print(originalo.names);
+  print("New object:");
+  print(newo.valuei);
+  print(newo.names);
+}
+
+/*
+*OUT*
+Original object before call:
+100
+original
+Returned object assigned to new variable:
+100
+original
+After modifying new object:
+Original object:
+100
+original
+New object:
+999
+modified_new
+After modifying original object:
+Original object:
+777
+modified_original
+New object:
+999
+modified_new
+*OUT*
+*/

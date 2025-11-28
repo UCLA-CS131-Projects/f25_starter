@@ -1,0 +1,35 @@
+def getInti() {
+  return 42;
+}
+
+def getBoolb() {
+  return true;
+}
+
+def getStrings() {
+  return "hello world";
+}
+
+def getObjecto() {
+    /* return should return default value */
+    var o; 
+    o = @;
+    return o;
+}
+
+def main() {
+  var resulti;
+  var results;
+  var resultb;
+  var resulto;
+  
+  resulti = getInti();
+  results = getStrings();
+  resultb = getBoolb();
+  resulto = getObjecto();
+}
+
+/*
+*OUT*
+*OUT*
+*/ 

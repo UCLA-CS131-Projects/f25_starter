@@ -1,0 +1,9 @@
+def main() {
+  return 42;
+}
+
+/*
+*OUT*
+ErrorType.TYPE_ERROR
+*OUT*
+*/

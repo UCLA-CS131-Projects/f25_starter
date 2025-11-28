@@ -1,0 +1,35 @@
+def fooi() {
+  var ansi;
+  ansi = 0;
+  var i;
+  i = 0;
+  while (i < 3) {
+    bvar ji;
+    ji = 0;
+    while (ji < 3) {
+      bvar ki;
+      ki = 0;
+      while (ki < 3) {
+        if (i * ji * ki == 1) {
+          return ansi;
+        } else {
+          ansi = ansi + 1;
+	      }
+        ki = ki + 1;
+      }
+      ji = ji + 1;
+    }
+    i = i + 1;
+  }
+}
+
+def main() {
+  print(fooi());
+}
+
+/*
+*OUT*
+13
+*OUT*
+*/
+

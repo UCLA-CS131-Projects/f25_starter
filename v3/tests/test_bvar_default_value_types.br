@@ -1,0 +1,19 @@
+def main() {
+  if (true) {
+    bvar i;      /* should get default value 0 */
+    bvar s;      /* should get default value "" */
+    bvar b;      /* should get default value false */
+    
+    print(i);
+    print(s);
+    print(b);
+  }
+}
+
+/*
+*OUT*
+0
+
+false
+*OUT*
+*/ 

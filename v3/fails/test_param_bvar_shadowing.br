@@ -1,0 +1,14 @@
+def main() {
+  test_param_bvar_shadowv(10);
+}
+
+def test_param_bvar_shadowv(i) {
+  bvar i;
+  print(i);
+}
+
+/*
+*OUT*
+ErrorType.NAME_ERROR
+*OUT*
+*/ 

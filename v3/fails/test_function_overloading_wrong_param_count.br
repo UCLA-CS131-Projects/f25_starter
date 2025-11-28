@@ -1,0 +1,21 @@
+def testOverloadi(ai) {
+  print("int param: ");
+  print(ai);
+}
+
+def testOverloadi(ao, bs) {
+  print("obj and string params: ");
+  print(ao);
+  print(bs);
+}
+
+def main() {
+  /* This call should fail - no function with 3 parameters exists */
+  testOverloadi(10, "hello", 8);
+}
+
+/*
+*OUT*
+ErrorType.NAME_ERROR
+*OUT*
+*/ 

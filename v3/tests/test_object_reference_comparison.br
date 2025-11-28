@@ -1,0 +1,31 @@
+def main() {
+  var ao;
+  var bo;
+  
+  ao = @;
+  ao.xi = 10;
+  ao.ys = "hello";
+  
+  bo = @;
+  bo.xi = 10;
+  bo.ys = "hello";
+  
+  if (ao == ao) {
+    print("ao == ao is true");
+  } else {
+    print("ao == ao is false");
+  }
+  
+  if (ao == bo) {
+    print("ao == bo is true");
+  } else {
+    print("ao == bo is false");
+  }
+}
+
+/*
+*OUT*
+ao == ao is true
+ao == bo is false
+*OUT*
+*/

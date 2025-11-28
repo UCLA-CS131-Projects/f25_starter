@@ -1,0 +1,21 @@
+def foo() {
+  var newObjecto;
+  newObjecto = @;
+  newObjecto.i = 42;
+  return newObjecto;
+}
+
+def main() {
+  var resulto;
+  resulto = foo();
+  
+  print("Value of i field:");
+  print(resulto.i);
+}
+
+/*
+*OUT*
+Value of i field:
+42
+*OUT*
+*/ 

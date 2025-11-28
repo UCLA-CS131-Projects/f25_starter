@@ -1,0 +1,11 @@
+def main() {
+  var xi;
+  xi.vi = 10;
+  print(xi.vi);
+}
+
+/*
+*OUT*
+ErrorType.TYPE_ERROR
+*OUT*
+*/ 

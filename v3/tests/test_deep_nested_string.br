@@ -1,0 +1,22 @@
+def main() {
+  var level1o;
+  level1o = @;
+  var level2o;
+  level2o = @;
+  var level3o;
+  level3o = @;
+  var level4o;
+  level4o = @;
+  
+  level1o.level2o = level2o;
+  level1o.level2o.level3o = level3o;
+  level1o.level2o.level3o.level4o = level4o;
+  level1o.level2o.level3o.level4o.messages = "Hello from deep nesting!";
+  print(level1o.level2o.level3o.level4o.messages);
+}
+
+/*
+*OUT*
+Hello from deep nesting!
+*OUT*
+*/ 

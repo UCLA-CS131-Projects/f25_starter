@@ -1,0 +1,11 @@
+def main() {
+  var o;
+  o = @;
+  print(o.nonexistent);
+}
+
+/*
+*OUT*
+ErrorType.NAME_ERROR
+*OUT*
+*/ 

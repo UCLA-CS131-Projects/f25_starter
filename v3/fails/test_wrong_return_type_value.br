@@ -1,0 +1,57 @@
+/* Test that validates type errors when functions return wrong type values */
+
+def getInti() {
+  /* Function declared to return int but returns string - should fail */
+  return "hello";
+}
+
+def getBoolb() {
+  /* Function declared to return bool but returns int - should fail */
+  return 42;
+}
+
+def getStrings() {
+  /* Function declared to return string but returns bool - should fail */
+  return true;
+}
+
+def getAnotherInti() {
+  /* Function declared to return int but returns bool - should fail */
+  return false;
+}
+
+def getAnotherBoolb() {
+  /* Function declared to return bool but returns string - should fail */
+  return "world";
+}
+
+def getAnotherStrings() {
+  /* Function declared to return string but returns int - should fail */
+  return 100;
+}
+
+def main() {
+  var ii;
+  var bb;
+  var ss;
+  
+  /* These assignments should all fail due to type mismatches */
+  ii = getInti();
+  bb = getBoolb();
+  ss = getStrings();
+  
+  /* Additional type mismatch tests */
+  ii = getAnotherInti();
+  bb = getAnotherBoolb();
+  ss = getAnotherStrings();
+  
+  print(ii);
+  print(bb);
+  print(ss);
+}
+
+/*
+*OUT*
+ErrorType.TYPE_ERROR
+*OUT*
+*/ 

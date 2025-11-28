@@ -1,0 +1,26 @@
+def main() {
+  var i;      /* int variable */
+  var s;      /* string variable */
+  var b;      /* bool variable */
+  
+  /* assign int to int */
+  i = 42;
+  
+  /* assign string to string */
+  s = "hello world";
+  
+  /* assign bool to bool */
+  b = true;
+  
+  print(i);
+  print(s);
+  print(b);
+}
+
+/*
+*OUT*
+42
+hello world
+true
+*OUT*
+*/ 

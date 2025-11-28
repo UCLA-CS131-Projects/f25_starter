@@ -1,0 +1,41 @@
+def testIntNoReturni() {
+    /* function with no return statement - should return default int value (0) */
+    print("testing int function");
+}
+
+def testBoolNoReturnb() {
+    /* function with no return statement - should return default bool value (false) */
+    print("testing bool function");
+}
+
+def testStringNoReturns() {
+    /* function with no return statement - should return default string value ("") */
+    print("testing string function");
+}
+
+def main() {
+    var resulti;
+    var resultb;
+    var results;
+    
+    /* test default return values when functions have no return statements */
+    resulti = testIntNoReturni();
+    resultb = testBoolNoReturnb();
+    results = testStringNoReturns();
+    
+    /* print results to verify default values */
+    print(resulti);
+    print(resultb);
+    print(results);
+}
+
+/*
+*OUT*
+testing int function
+testing bool function
+testing string function
+0
+false
+
+*OUT*
+*/ 

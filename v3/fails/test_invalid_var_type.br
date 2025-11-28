@@ -1,0 +1,10 @@
+def main() {
+  var invalidvar;
+  print("This variable has no valid trailing type character");
+}
+
+/*
+*OUT*
+ErrorType.TYPE_ERROR
+*OUT*
+*/ 

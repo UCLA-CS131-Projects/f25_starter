@@ -1,0 +1,60 @@
+/* Test case: function takes ref to int, returns that parameter,
+   calling function assigns return value to new variable,
+   verify original variable unchanged */
+
+def return_ref_parami(&refi) {
+  return refi;
+}
+
+def main() {
+  var originali;
+  var newi;
+  
+  originali = 100;
+  
+  print("Original value before call:");
+  print(originali);
+  
+  /* Call function that takes ref and returns it, assign to new variable */
+  newi = return_ref_parami(originali);
+  
+  print("Returned value assigned to new variable:");
+  print(newi);
+  
+  /* Modify the new variable */
+  newi = 999;
+  
+  print("After modifying new variable:");
+  print("Original variable:");
+  print(originali);
+  print("New variable:");
+  print(newi);
+  
+  /* Now modify the original variable */
+  originali = 777;
+  
+  print("After modifying original variable:");
+  print("Original variable:");
+  print(originali);
+  print("New variable:");
+  print(newi);
+}
+
+/*
+*OUT*
+Original value before call:
+100
+Returned value assigned to new variable:
+100
+After modifying new variable:
+Original variable:
+100
+New variable:
+999
+After modifying original variable:
+Original variable:
+777
+New variable:
+999
+*OUT*
+*/

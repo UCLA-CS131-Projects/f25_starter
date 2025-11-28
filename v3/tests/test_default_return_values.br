@@ -1,0 +1,78 @@
+/* Test functions that return default values when no explicit return statement is provided */
+
+def getDefaultInti() {
+  /* No return statement - should return default int value (0) */
+  var xi;
+  xi = 5;
+}
+
+def getDefaultBoolb() {
+  /* No return statement - should return default bool value (false) */
+  var yb;
+  yb = true;
+}
+
+def getDefaultStrings() {
+  /* No return statement - should return default string value ("") */
+  var zs;
+  zs = "hello";
+}
+
+def getExplicitDefaultInti() {
+  /* Explicit return; statement - should return default int value (0) */
+  var xi;
+  xi = 10;
+  return;
+}
+
+def getExplicitDefaultBoolb() {
+  /* Explicit return; statement - should return default bool value (false) */
+  var yb;
+  yb = false;
+  return;
+}
+
+def getExplicitDefaultStrings() {
+  /* Explicit return; statement - should return default string value ("") */
+  var zs;
+  zs = "world";
+  return;
+}
+
+def main() {
+  var defaulti;
+  var expliciti;
+  var defaultb;
+  var explicitb;
+  var defaults;
+  var explicits;
+  
+  /* Test functions without explicit return statements */
+  defaulti = getDefaultInti();
+  defaultb = getDefaultBoolb();
+  defaults = getDefaultStrings();
+  
+  /* Test functions with explicit return; statements */
+  expliciti = getExplicitDefaultInti();
+  explicitb = getExplicitDefaultBoolb();
+  explicits = getExplicitDefaultStrings();
+  
+  /* Print results to verify default values */
+  print(defaulti);
+  print(defaultb);
+  print(defaults);
+  print(expliciti);
+  print(explicitb);
+  print(explicits);
+}
+
+/*
+*OUT*
+0
+false
+
+0
+false
+
+*OUT*
+*/ 

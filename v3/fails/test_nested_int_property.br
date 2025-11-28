@@ -1,0 +1,15 @@
+def main() {
+  var o;
+  o = @;
+  var nestedi;
+  
+  o.nestedi = nestedi;
+  o.nestedi.i = 10;
+  print(o.nestedi.i);
+}
+
+/*
+*OUT*
+ErrorType.TYPE_ERROR
+*OUT*
+*/ 

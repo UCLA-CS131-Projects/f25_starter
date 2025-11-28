@@ -1,0 +1,15 @@
+def main() {
+  if (true) {
+    if (true) {
+      bvar i;
+      i = 10;
+      print(i);
+    }
+  }
+}
+
+/*
+*OUT*
+10
+*OUT*
+*/ 

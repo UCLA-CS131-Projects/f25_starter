@@ -1,0 +1,72 @@
+/* Test that demonstrates pass-by-value in the innermost function call */
+
+def modify_values_by_valuev(vali, vals, valb, valo) {
+  /* This function receives parameters by VALUE - changes won't affect originals */
+  vali = 99;
+  vals = "deeply_modified";
+  valb = true;
+  valo = @;
+  valo.newi = 777;
+}
+
+def intermediate_funcv(&i, &s, &b, &o) {
+  /* This function receives parameters by reference but passes them 
+     by VALUE to the modification function */
+  modify_values_by_valuev(i, s, b, o);
+  
+  /* Print values in intermediate function to verify they didn't change */
+  print("In intermediate function after modify call:");
+  print(i);
+  print(s);
+  print(b);
+  print(o.oldi);
+}
+
+def main() {
+  var testi;
+  var tests;
+  var testb;
+  var testo;
+  
+  /* Initialize values */
+  testi = 5;
+  tests = "original_value";
+  testb = false;
+  testo = @;
+  testo.oldi = 25;
+  
+  print("Before function chain:");
+  print(testi);
+  print(tests);
+  print(testb);
+  print(testo.oldi);
+  
+  /* Call intermediate function which will call modify_values_by_value */
+  intermediate_funcv(testi, tests, testb, testo);
+  
+  print("After function chain:");
+  print(testi);
+  print(tests);
+  print(testb);
+  print(testo.oldi);
+}
+
+/*
+*OUT*
+Before function chain:
+5
+original_value
+false
+25
+In intermediate function after modify call:
+5
+original_value
+false
+25
+After function chain:
+5
+original_value
+false
+25
+*OUT*
+*/

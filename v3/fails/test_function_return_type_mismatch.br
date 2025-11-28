@@ -1,0 +1,36 @@
+def getInti() {
+  return 42;
+}
+
+def getBoolb() {
+  return true;
+}
+
+def getStrings() {
+  return "hello world";
+}
+
+def main() {
+  var i;      /* int variable */
+  var s;      /* string variable */
+  var b;      /* bool variable */
+  
+  /* assign function returning bool to int variable - should fail */
+  i = getBoolb();
+  
+  /* assign function returning int to string variable - should fail */
+  s = getInti();
+  
+  /* assign function returning string to bool variable - should fail */
+  b = getStrings();
+  
+  print(i);
+  print(s);
+  print(b);
+}
+
+/*
+*OUT*
+ErrorType.TYPE_ERROR
+*OUT*
+*/ 

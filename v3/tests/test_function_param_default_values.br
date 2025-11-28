@@ -1,0 +1,17 @@
+def testi(ai, bi, ci) {
+  print(ai);
+  print(bi);
+  print(ci);
+}
+
+def main() {
+  testi(10, 20, 30);
+}
+
+/*
+*OUT*
+10
+20
+30
+*OUT*
+*/ 

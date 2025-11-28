@@ -1,0 +1,10 @@
+def main() {
+  var xo;
+  xo.i = 10;
+}
+
+/*
+*OUT*
+ErrorType.FAULT_ERROR
+*OUT*
+*/ 

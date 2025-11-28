@@ -1,0 +1,19 @@
+def voidFunctionv() {
+  /* function with no return statement - void function */
+  return;
+}
+
+def main() {
+  var resulti;
+  
+  /* assign void function to variable - should fail */
+  resulti = voidFunctionv();
+ 
+  print(resulti);
+}
+
+/*
+*OUT*
+ErrorType.TYPE_ERROR
+*OUT*
+*/ 

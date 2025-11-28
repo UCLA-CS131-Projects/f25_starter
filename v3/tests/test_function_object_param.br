@@ -1,0 +1,16 @@
+def printObjectFieldv(objo) {
+  print(objo.messages);
+}
+
+def main() {
+  var myObjecto;
+  myObjecto = @;
+  myObjecto.messages = "Hello from object field!";
+  printObjectFieldv(myObjecto);
+}
+
+/*
+*OUT*
+Hello from object field!
+*OUT*
+*/ 

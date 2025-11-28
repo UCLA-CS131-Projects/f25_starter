@@ -1,0 +1,13 @@
+def main() {
+  var objecto;
+  objecto = @;
+  objecto.childo = nil;
+
+  print(objecto.childo.field);
+}
+
+/*
+*OUT*
+ErrorType.FAULT_ERROR
+*OUT*
+*/

@@ -1,0 +1,19 @@
+def main() {
+  var xi;
+  bvar yi;
+  xi = 5;
+  yi = 10;
+  test_param_shadowv(xi, yi);
+}
+
+def test_param_shadowv(xi, yi) {
+  print(xi);
+  print(yi);
+}
+
+/*
+*OUT*
+5
+10
+*OUT*
+*/ 

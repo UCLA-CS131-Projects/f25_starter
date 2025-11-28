@@ -1,0 +1,15 @@
+def fo() {
+  return nil;
+}
+
+def main() {
+  var ao;
+  ao = fo();
+  print("bye");
+}
+
+/*
+*OUT*
+bye
+*OUT*
+*/ 

@@ -1,0 +1,13 @@
+def main() {
+  print("Starting test");
+}
+
+def invalidfunc() {
+  print("This function has no valid return type character");
+}
+
+/*
+*OUT*
+ErrorType.TYPE_ERROR
+*OUT*
+*/ 

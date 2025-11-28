@@ -1,0 +1,10 @@
+def main() {
+  var invalidvar;  /* variable name doesn't end with valid type character */
+  print("This should fail due to invalid default value type");
+}
+
+/*
+*OUT*
+ErrorType.TYPE_ERROR
+*OUT*
+*/ 

@@ -1,0 +1,49 @@
+def testOverloadi() {
+  print("no params");
+}
+
+def testOverloadi(ai) {
+  print("int param: ");
+  print(ai);
+}
+
+def testOverloadi(ab) {
+  print("bool param: ");
+  print(ab);
+}
+
+def testOverloadi(ao, bs) {
+  print("obj and string params: ");
+  print(bs);
+}
+
+def testOverloadi(as, bi) {
+  print("string and int params: ");
+  print(as);
+  print(bi);
+}
+
+def main() {
+  testOverloadi();
+  testOverloadi(42);
+  testOverloadi(true);
+  var o;
+  o = @;
+  testOverloadi(o, "hello");
+  testOverloadi("world", 100);
+}
+
+/*
+*OUT*
+no params
+int param: 
+42
+bool param: 
+true
+obj and string params: 
+hello
+string and int params: 
+world
+100
+*OUT*
+*/ 

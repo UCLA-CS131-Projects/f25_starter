@@ -1,0 +1,59 @@
+/* Test that demonstrates pass-by-reference through a chain of function calls */
+
+def modify_valuesv(&vali, &vals, &valb, &valo) {
+  vali = 99;
+  vals = "deeply_modified";
+  valb = true;
+  valo = @;
+  valo.newi = 777;
+}
+
+def intermediate_funcv(&i, &s, &b, &o) {
+  /* This function receives parameters by reference and passes them 
+     by reference to another function that makes the actual modifications */
+  modify_valuesv(i, s, b, o);
+}
+
+def main() {
+  var testi;
+  var tests;
+  var testb;
+  var testo;
+  
+  /* Initialize values */
+  testi = 5;
+  tests = "original_value";
+  testb = false;
+  testo = @;
+  testo.oldi = 25;
+  
+  print("Before function chain:");
+  print(testi);
+  print(tests);
+  print(testb);
+  print(testo.oldi);
+  
+  /* Call intermediate function which will call modify_values */
+  intermediate_funcv(testi, tests, testb, testo);
+  
+  print("After function chain:");
+  print(testi);
+  print(tests);
+  print(testb);
+  print(testo.newi);
+}
+
+/*
+*OUT*
+Before function chain:
+5
+original_value
+false
+25
+After function chain:
+99
+deeply_modified
+true
+777
+*OUT*
+*/
